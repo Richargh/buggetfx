@@ -1,0 +1,3 @@
+= BuggetFx
+
+Budget on your Desktop.
