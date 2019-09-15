@@ -1,3 +1,11 @@
 = BuggetFx
 
-Budget on your Desktop.
+Bugget on your Desktop.
+
+== Getting Started
+
+Run the application with `./gradlew run`.
+
+=== Build & Test
+
+Build and test with `./gradlew build`.
