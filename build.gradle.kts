@@ -2,6 +2,7 @@ group = "de.richargh"
 version = "0.1-SNAPSHOT"
 
 val tornadofx_version: String by project
+val jackson_version: String by project
 val junit5_version: String by project
 val kluent_version: String by project
 
@@ -27,6 +28,8 @@ dependencies {
     implementation(kotlin("stdlib"))
 
     implementation("no.tornado:tornadofx:$tornadofx_version")
+    implementation("com.fasterxml.jackson.core:jackson-databind:$jackson_version")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junit5_version")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:$junit5_version")

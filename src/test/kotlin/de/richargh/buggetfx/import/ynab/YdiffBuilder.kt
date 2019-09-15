@@ -2,5 +2,9 @@ package de.richargh.buggetfx.import.ynab
 
 class YdiffBuilder {
 
-    fun build() = Ydiff("foo")
+    private var shortDeviceId = "O"
+
+    fun build(): Ydiff {
+        return Ydiff(shortDeviceId)
+    }
 }
