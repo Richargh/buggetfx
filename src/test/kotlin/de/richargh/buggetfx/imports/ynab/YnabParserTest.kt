@@ -1,5 +1,6 @@
 package de.richargh.buggetfx.imports.ynab
 
+import de.richargh.buggetfx.imports.ynab_builder.YdiffBuilder
 import org.amshove.kluent.shouldEqual
 import org.junit.jupiter.api.Test
 import java.io.File
