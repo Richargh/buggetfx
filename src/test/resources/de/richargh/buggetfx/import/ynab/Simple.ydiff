@@ -1,6 +1,7 @@
 {
   "shortDeviceId": "A",
   "dataVersion": "4.2",
+  "publishTime": "Sun Sep 8 14:56:08 GMT+0200 2019",
 
   "startVersion": "A-4,B-2",
   "endVersion": "A-5,B-2"
