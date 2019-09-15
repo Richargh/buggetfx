@@ -1,3 +1,7 @@
 {
-  "shortDeviceId": "O"
+  "shortDeviceId": "A",
+  "dataVersion": "4.2",
+
+  "startVersion": "A-4,B-2",
+  "endVersion": "A-5,B-2"
 }
