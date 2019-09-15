@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.import.ynab
+package de.richargh.buggetfx.imports.ynab.diff
 
 import de.richargh.buggetfx.time.Moment
 

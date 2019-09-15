@@ -1,5 +1,6 @@
-package de.richargh.buggetfx.import.ynab
+package de.richargh.buggetfx.imports.ynab_builder
 
+import de.richargh.buggetfx.imports.ynab.diff.Ydiff
 import de.richargh.buggetfx.time.Cronus
 
 class YdiffBuilder {

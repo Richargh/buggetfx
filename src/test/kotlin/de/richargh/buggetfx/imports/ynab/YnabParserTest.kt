@@ -1,9 +1,8 @@
-package de.richargh.buggetfx.import.ynab
+package de.richargh.buggetfx.imports.ynab
 
 import org.amshove.kluent.shouldEqual
 import org.junit.jupiter.api.Test
 import java.io.File
-import java.net.URL
 
 class YnabParserTest {
     @Test

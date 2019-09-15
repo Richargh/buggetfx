@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.import.ynab
+package de.richargh.buggetfx.imports.ynab
 
 import com.fasterxml.jackson.core.JsonParser
 import com.fasterxml.jackson.core.JsonProcessingException

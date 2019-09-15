@@ -1,9 +1,10 @@
-package de.richargh.buggetfx.import.ynab
+package de.richargh.buggetfx.imports.ynab
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
 import com.fasterxml.jackson.databind.module.SimpleModule
+import de.richargh.buggetfx.imports.ynab.diff.Ydiff
 import de.richargh.buggetfx.time.Moment
 
 class YnabParser {
