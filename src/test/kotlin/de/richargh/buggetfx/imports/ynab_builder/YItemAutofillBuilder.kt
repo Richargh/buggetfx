@@ -4,7 +4,7 @@ import de.richargh.buggetfx.imports.ynab.model.base.YEntityType
 import de.richargh.buggetfx.imports.ynab.model.diff.toYAutofillCategoryId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.diff.YItemAutofill
+import de.richargh.buggetfx.imports.ynab.model.entity.YItemAutofill
 
 class YItemAutofillBuilder {
 

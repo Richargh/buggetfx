@@ -1,6 +1,6 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
-import de.richargh.buggetfx.imports.ynab.model.diff.YItem
+import de.richargh.buggetfx.imports.ynab.model.entity.YItem
 import de.richargh.buggetfx.imports.ynab.model.diff.YDiff
 import de.richargh.buggetfx.time.Cronus
 

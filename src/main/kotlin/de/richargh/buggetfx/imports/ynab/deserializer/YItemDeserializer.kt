@@ -8,8 +8,8 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityType
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.diff.YItem
-import de.richargh.buggetfx.imports.ynab.model.diff.YItemAutofill
+import de.richargh.buggetfx.imports.ynab.model.entity.YItem
+import de.richargh.buggetfx.imports.ynab.model.entity.YItemAutofill
 import de.richargh.buggetfx.imports.ynab.model.diff.toYAutofillCategoryId
 import java.io.IOException
 
