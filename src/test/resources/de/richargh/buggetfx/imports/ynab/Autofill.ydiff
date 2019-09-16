@@ -1,0 +1,22 @@
+{
+  "shortDeviceId": "A",
+  "deviceGUID": "7ED5BBEA-8B0F-0C0C-A811-233A7893803B",
+  "dataVersion": "4.2",
+  "publishTime": "Sun Sep 8 14:56:08 GMT+0200 2019",
+
+  "startVersion": "A-4,B-2",
+  "endVersion": "A-5,B-2",
+
+  "items": [
+      {
+        "autoFillMemo": "no memo",
+        "name": "no name",
+        "enabled": true,
+        "entityVersion": "A-5",
+        "entityId": "C45B535E-4AAD-C2FD-7A91-46F1AE68A6ED",
+        "autoFillCategoryId": "3A471795-F8F2-7727-F36C-D0D1A4E8C4F9",
+        "entityType": "payee",
+        "autoFillAmount": -5.19
+      }
+  ]
+}

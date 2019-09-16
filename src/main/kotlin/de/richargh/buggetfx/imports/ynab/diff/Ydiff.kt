@@ -8,4 +8,6 @@ data class Ydiff(
         val publishTime: Moment,
 
         val startVersion: String,
-        val endVersion: String)
+        val endVersion: String,
+
+        val items: List<YItem>)

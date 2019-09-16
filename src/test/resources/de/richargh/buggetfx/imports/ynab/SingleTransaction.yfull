@@ -1,0 +1,88 @@
+{
+	"transactions": [
+	    {
+            "accountId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
+            "accepted": true,
+            "entityId": "09C115B4-E0DD-F355-3121-2C3FB69F6572",
+            "entityType": "transaction",
+            "date": "2013-04-26",
+            "entityVersion": "A-1",
+            "memo": "Golden Cherries",
+            "amount": 10,
+            "cleared": "Cleared",
+            "categoryId": "A15",
+            "payeeId": "9EEECCD1-3630-B33A-88BC-40FA6C3408B1"
+        }
+	],
+	"scheduledTransactions": [],
+	"accountMappings": [],
+	"budgetMetaData": {
+        "entityVersion": "A-0",
+        "currencyLocale": "de_DE",
+        "dateLocale": "de_DE",
+        "budgetType": "Personal",
+        "strictBudget": "TRUE",
+        "entityId": "A2",
+        "entityType": "budgetMetaData",
+        "currencyISOSymbol": null
+    },
+	"accounts": [
+        {
+            "entityVersion": "A-1",
+            "accountName": "Power Bank",
+            "lastReconciledDate": null,
+            "lastReconciledBalance": 0,
+            "hidden": false,
+            "lastEnteredCheckNumber": -1,
+            "entityId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
+            "sortableIndex": 0,
+            "entityType": "account",
+            "onBudget": true,
+            "accountType": "Cash"
+        }
+	],
+	"masterCategories": [
+        {
+            "entityVersion": "A-2",
+            "entityId": "F9C3D722",
+            "sortableIndex": 2080374783,
+            "entityType": "masterCategory",
+            "expanded": true,
+            "subCategories": [
+                {
+                    "entityVersion": "A-3",
+                    "entityId": "A16",
+                    "sortableIndex": 0,
+                    "entityType": "category",
+                    "type": "OUTFLOW",
+                    "cachedBalance": 0,
+                    "masterCategoryId": "F9C3D722",
+                    "name": "Groceries"
+                }
+            ],
+            "deleteable": true,
+            "type": "OUTFLOW",
+            "name": "Everyday Expenses"
+        }
+	],
+	"payees": [
+	    {
+            "entityVersion": "D-238",
+            "enabled": true,
+            "entityId": "9EEECCD1-3630-B33A-88BC-40FA6C3408B1",
+            "entityType": "payee",
+            "renameConditions": null,
+            "autoFillMemo": "",
+            "locations": null,
+            "autoFillCategoryId": "Category/__ImmediateIncome__",
+            "autoFillAmount": 200,
+            "name": "Wallmart"
+        }
+	],
+	"monthlyBudgets": [],
+	"fileMetaData": {
+        "currentKnowledge": "A-5,B-0",
+        "budgetDataVersion": "4.2",
+        "entityType": "fileMetaData"
+    }
+}
