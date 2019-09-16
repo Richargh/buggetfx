@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.imports.ynab
+package de.richargh.buggetfx.imports.ynab.deserializer
 
 import com.fasterxml.jackson.core.JsonParser
 import com.fasterxml.jackson.core.JsonProcessingException
@@ -17,7 +17,8 @@ class MomentDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDes
     override fun deserialize(jp: JsonParser, ctxt: DeserializationContext): Moment {
         val node: JsonNode = jp.codec.readTree(jp)
         val dateString = node.asText()
-        val zonedDateTime = ZonedDateTime.parse(dateString, DATE_TIME_FORMATTER)
+        val zonedDateTime = ZonedDateTime.parse(dateString,
+                                                DATE_TIME_FORMATTER)
 
         return Moment(zonedDateTime)
     }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
 import com.fasterxml.jackson.databind.module.SimpleModule
+import de.richargh.buggetfx.imports.ynab.deserializer.MomentDeserializer
 import de.richargh.buggetfx.imports.ynab.model.budget.YFull
 import de.richargh.buggetfx.imports.ynab.deserializer.YItemDeserializer
 import de.richargh.buggetfx.imports.ynab.model.diff.YDiff
