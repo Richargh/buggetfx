@@ -1,6 +1,6 @@
 package de.richargh.buggetfx.imports.ynab
 
-import de.richargh.buggetfx.imports.ynab_builder.YItemAutofillBuilder
+import de.richargh.buggetfx.imports.ynab_builder.YItemPayeeBuilder
 import de.richargh.buggetfx.imports.ynab_builder.YFullBuilder
 import de.richargh.buggetfx.imports.ynab_builder.YDiffBuilder
 import org.amshove.kluent.shouldEqual
@@ -9,16 +9,16 @@ import java.io.File
 
 class YnabParserTest {
     @Test
-    fun `autofill diff should match default autofill diff`() {
+    fun `payee diff should match default payee diff`() {
         // arrange
-        val file = File(this::class.java.getResource("Autofill.ydiff").file)
+        val file = File(this::class.java.getResource("Payee.ydiff").file)
         val ynabParser = YnabParser()
 
         // act
         val actual = ynabParser.parseDiff(file)
 
         // assert
-        val expectedAutofill = YItemAutofillBuilder().build()
+        val expectedAutofill = YItemPayeeBuilder().build()
         val expected = YDiffBuilder().plusItem(expectedAutofill).build()
         actual shouldEqual expected
     }
