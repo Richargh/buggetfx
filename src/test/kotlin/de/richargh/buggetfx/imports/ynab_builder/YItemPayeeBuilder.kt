@@ -1,7 +1,6 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
-import de.richargh.buggetfx.imports.ynab.model.entity.YEntityType
-import de.richargh.buggetfx.imports.ynab.model.diff.toYAutofillCategoryId
+import de.richargh.buggetfx.imports.ynab.model.entity.toYAutofillCategoryId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
 import de.richargh.buggetfx.imports.ynab.model.entity.YItemPayee

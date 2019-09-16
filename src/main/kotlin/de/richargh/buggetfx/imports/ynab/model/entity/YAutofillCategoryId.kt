@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.imports.ynab.model.diff
+package de.richargh.buggetfx.imports.ynab.model.entity
 
 data class YAutofillCategoryId(val rawValue: String)
 

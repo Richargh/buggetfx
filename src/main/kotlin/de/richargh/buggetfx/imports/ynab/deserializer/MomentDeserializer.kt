@@ -17,15 +17,18 @@ class MomentDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDes
     override fun deserialize(jp: JsonParser, ctxt: DeserializationContext): Moment {
         val node: JsonNode = jp.codec.readTree(jp)
         val dateString = node.asText()
-        val zonedDateTime = ZonedDateTime.parse(dateString,
-                                                DATE_TIME_FORMATTER)
-
-        return Moment(zonedDateTime)
+        return parseMoment(dateString)
     }
 }
 
+private fun parseMoment(dateString: String): Moment {
+    val zonedDateTime = ZonedDateTime.parse(dateString,
+                                            DATE_TIME_FORMATTER)
+    return Moment(zonedDateTime)
+}
+
 // more formate online: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
-val DATE_TIME_FORMATTER = DateTimeFormatterBuilder()
-        .appendOptional(ofPattern("EEE MMM d HH:mm:ss 'GMT'Z yyyy")) //"Sun Sep 8 14:56:08 GMT+0200 2019"
-        .appendOptional(ofPattern("yyyy-MM-dd HH:mm:ss")) // "2013-05-04 18:50:02"
+private val DATE_TIME_FORMATTER = DateTimeFormatterBuilder()
+        .appendOptional(ofPattern("EEE MMM d HH:mm:ss 'GMT'Z yyyy")) // Sun Sep 8 14:56:08 GMT+0200 2019
+        .appendOptional(ofPattern("yyyy-MM-dd HH:mm:ss")) // 2013-05-04 18:50:02
         .toFormatter()

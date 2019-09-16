@@ -1,0 +1,33 @@
+{
+  "shortDeviceId": "A",
+  "deviceGUID": "7ED5BBEA-8B0F-0C0C-A811-233A7893803B",
+  "dataVersion": "4.2",
+  "publishTime": "Sun Sep 8 14:56:08 GMT+0200 2019",
+
+  "startVersion": "A-4,B-2",
+  "endVersion": "A-5,B-2",
+
+  "items": [
+      {
+        "date": "2018-07-06",
+        "subTransactions": null,
+        "matchedTransactions": null,
+        "YNABID": null,
+        "FITID": null,
+        "source": null,
+        "entityId": "97F314EA-91FB-19AB-8396-CE0004ADDC20",
+        "entityType": "transaction",
+        "targetAccountId": null,
+        "transferTransactionId": null,
+        "categoryId": "3A471795-F8F2-7727-F36C-D0D1A4E8C4F9",
+        "payeeId": "C45B535E-4AAD-C2FD-7A91-46F1AE68A6ED",
+        "entityVersion": "A-5",
+        "amount": -104.19,
+        "parentTransactionIdIfMatched": null,
+        "accountId": "C8847157-E05B-49FA-86AA-5D60556A5E9D",
+        "memo": "for the Horde",
+        "cleared": "Uncleared",
+        "accepted": true
+      }
+  ]
+}
