@@ -1,7 +1,7 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
-import de.richargh.buggetfx.imports.ynab.diff.YItem
-import de.richargh.buggetfx.imports.ynab.diff.YDiff
+import de.richargh.buggetfx.imports.ynab.model.diff.YItem
+import de.richargh.buggetfx.imports.ynab.model.diff.YDiff
 import de.richargh.buggetfx.time.Cronus
 
 class YDiffBuilder {

@@ -1,7 +1,7 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
-import de.richargh.buggetfx.imports.ynab.budget.YTransaction
-import de.richargh.buggetfx.imports.ynab.budget.YFull
+import de.richargh.buggetfx.imports.ynab.model.budget.YTransaction
+import de.richargh.buggetfx.imports.ynab.model.budget.YFull
 
 class YFullBuilder {
 

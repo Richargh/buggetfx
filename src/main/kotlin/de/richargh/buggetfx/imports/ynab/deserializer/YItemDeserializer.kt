@@ -5,12 +5,12 @@ import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.DeserializationContext
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer
-import de.richargh.buggetfx.imports.ynab.base.toYEntityId
-import de.richargh.buggetfx.imports.ynab.base.toYEntityType
-import de.richargh.buggetfx.imports.ynab.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.diff.YItem
-import de.richargh.buggetfx.imports.ynab.diff.YItemAutofill
-import de.richargh.buggetfx.imports.ynab.diff.toYAutofillCategoryId
+import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
+import de.richargh.buggetfx.imports.ynab.model.base.toYEntityType
+import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
+import de.richargh.buggetfx.imports.ynab.model.diff.YItem
+import de.richargh.buggetfx.imports.ynab.model.diff.YItemAutofill
+import de.richargh.buggetfx.imports.ynab.model.diff.toYAutofillCategoryId
 import java.io.IOException
 
 class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDeserializer<YItem>(vc) {

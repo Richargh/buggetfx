@@ -1,10 +1,10 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
-import de.richargh.buggetfx.imports.ynab.base.YEntityType
-import de.richargh.buggetfx.imports.ynab.diff.toYAutofillCategoryId
-import de.richargh.buggetfx.imports.ynab.base.toYEntityId
-import de.richargh.buggetfx.imports.ynab.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.diff.YItemAutofill
+import de.richargh.buggetfx.imports.ynab.model.base.YEntityType
+import de.richargh.buggetfx.imports.ynab.model.diff.toYAutofillCategoryId
+import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
+import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
+import de.richargh.buggetfx.imports.ynab.model.diff.YItemAutofill
 
 class YItemAutofillBuilder {
 
