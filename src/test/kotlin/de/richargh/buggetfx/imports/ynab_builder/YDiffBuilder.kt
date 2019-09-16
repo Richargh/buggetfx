@@ -1,10 +1,10 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.diff.YItem
-import de.richargh.buggetfx.imports.ynab.diff.Ydiff
+import de.richargh.buggetfx.imports.ynab.diff.YDiff
 import de.richargh.buggetfx.time.Cronus
 
-class YdiffBuilder {
+class YDiffBuilder {
 
     private var shortDeviceId = "A"
     private var dataVersion = "4.2"
@@ -15,8 +15,8 @@ class YdiffBuilder {
 
     private val items = mutableListOf<YItem>()
 
-    fun build(): Ydiff {
-        return Ydiff(
+    fun build(): YDiff {
+        return YDiff(
                 shortDeviceId,
                 dataVersion,
                 publishTime,

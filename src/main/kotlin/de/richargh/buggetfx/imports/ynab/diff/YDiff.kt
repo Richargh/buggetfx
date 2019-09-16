@@ -2,7 +2,7 @@ package de.richargh.buggetfx.imports.ynab.diff
 
 import de.richargh.buggetfx.time.Moment
 
-data class Ydiff(
+data class YDiff(
         val shortDeviceId: String,
         val dataVersion: String,
         val publishTime: Moment,

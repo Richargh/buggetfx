@@ -4,11 +4,9 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
 import com.fasterxml.jackson.databind.module.SimpleModule
-import de.richargh.buggetfx.imports.ynab.budget.Yfull
+import de.richargh.buggetfx.imports.ynab.budget.YFull
 import de.richargh.buggetfx.imports.ynab.deserializer.YItemDeserializer
-import de.richargh.buggetfx.imports.ynab.diff.YItem
-import de.richargh.buggetfx.imports.ynab.diff.Ydiff
-import de.richargh.buggetfx.time.Moment
+import de.richargh.buggetfx.imports.ynab.diff.YDiff
 
 class YnabParser {
 
@@ -21,6 +19,6 @@ class YnabParser {
         registerModule(module)
     }
 
-    fun parseDiff(file: File): Ydiff = mapper.readValue(file)
-    fun parseFull(file: File): Yfull = mapper.readValue(file)
+    fun parseDiff(file: File): YDiff = mapper.readValue(file)
+    fun parseFull(file: File): YFull = mapper.readValue(file)
 }

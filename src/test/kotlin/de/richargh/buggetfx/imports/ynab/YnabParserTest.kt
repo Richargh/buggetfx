@@ -1,8 +1,8 @@
 package de.richargh.buggetfx.imports.ynab
 
 import de.richargh.buggetfx.imports.ynab_builder.YItemAutofillBuilder
-import de.richargh.buggetfx.imports.ynab_builder.YfullBuilder
-import de.richargh.buggetfx.imports.ynab_builder.YdiffBuilder
+import de.richargh.buggetfx.imports.ynab_builder.YFullBuilder
+import de.richargh.buggetfx.imports.ynab_builder.YDiffBuilder
 import org.amshove.kluent.shouldEqual
 import org.junit.jupiter.api.Test
 import java.io.File
@@ -19,7 +19,7 @@ class YnabParserTest {
 
         // assert
         val expectedAutofill = YItemAutofillBuilder().build()
-        val expected = YdiffBuilder().plusItem(expectedAutofill).build()
+        val expected = YDiffBuilder().plusItem(expectedAutofill).build()
         actual shouldEqual expected
     }
 
@@ -33,7 +33,7 @@ class YnabParserTest {
         val actual = ynabParser.parseFull(file)
 
         // assert
-        val expected = YfullBuilder().build()
+        val expected = YFullBuilder().build()
         actual shouldEqual expected
     }
 }
