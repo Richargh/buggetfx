@@ -28,12 +28,13 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
         return when(entityType){
             YEntityType.PAYEE -> payee(node)
             YEntityType.TRANSACTION -> transaction(node)
+            YEntityType.MASTER_CATEGORY -> masterCategory(node)
             else              -> YItemUnknown(entityType)
         }
     }
 
     private fun payee(node: JsonNode): YItem {
-        val autoFillMemo = node["autoFillMemo"]?.asText()
+        val autoFillMemo = node["autoFillMemo"].asTextOrNull()
         val name = node["name"].asText()
         val enabled = node["enabled"].asBoolean()
         val entityVersion = node["entityVersion"].asText().toYEntityVersion()
@@ -61,7 +62,7 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
         val entityVersion = node["entityVersion"].asText().toYEntityVersion()
         val amount = node["amount"].asDouble()
         val accountId = node["accountId"].asText().toYAccountId()
-        val memo = node["memo"]?.asText()
+        val memo = node["memo"].asTextOrNull()
 
         return YItemTransaction(
                date,
@@ -73,6 +74,13 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
                amount,
                accountId,
                memo)
+    }
+
+    private fun masterCategory(node: JsonNode): YItem {
+        val name = node["name"].asText()
+
+        return YMasterCategory(
+                name)
     }
 }
 

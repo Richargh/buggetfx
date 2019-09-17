@@ -1,9 +1,6 @@
 package de.richargh.buggetfx.imports.ynab
 
-import de.richargh.buggetfx.imports.ynab_builder.YItemPayeeBuilder
-import de.richargh.buggetfx.imports.ynab_builder.YFullBuilder
-import de.richargh.buggetfx.imports.ynab_builder.YDiffBuilder
-import de.richargh.buggetfx.imports.ynab_builder.YItemTransactionBuilder
+import de.richargh.buggetfx.imports.ynab_builder.*
 import org.amshove.kluent.shouldEqual
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
@@ -22,12 +19,12 @@ class YnabParserTest {
             val ynabParser = YnabParser()
 
             // act
-            val actual = ynabParser.parseDiff(file)
+            val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val expectedAutofill = YItemPayeeBuilder().build()
-            val expected = YDiffBuilder().plusItem(expectedAutofill).build()
-            actual shouldEqual expected
+            val expected = YItemPayeeBuilder().build()
+            val expectedDiff = YDiffBuilder().plusItem(expected).build()
+            actualDiff shouldEqual expectedDiff
         }
 
         @Test
@@ -37,12 +34,27 @@ class YnabParserTest {
             val ynabParser = YnabParser()
 
             // act
-            val actual = ynabParser.parseDiff(file)
+            val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val expectedAutofill = YItemTransactionBuilder().build()
-            val expected = YDiffBuilder().plusItem(expectedAutofill).build()
-            actual shouldEqual expected
+            val expected = YItemTransactionBuilder().build()
+            val expectedDiff = YDiffBuilder().plusItem(expected).build()
+            actualDiff shouldEqual expectedDiff
+        }
+
+        @Test
+        fun `master category diff should match default master category diff`() {
+            // arrange
+            val file = File(this::class.java.getResource("MasterCategory.ydiff").file)
+            val ynabParser = YnabParser()
+
+            // act
+            val actualDiff = ynabParser.parseDiff(file)
+
+            // assert
+            val expected = YMasterCategoryBuilder().build()
+            val expectedDiff = YDiffBuilder().plusItem(expected).build()
+            actualDiff shouldEqual expectedDiff
         }
     }
 
