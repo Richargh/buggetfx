@@ -58,6 +58,21 @@ class YnabParserTest {
         }
 
         @Test
+        fun `budget meta data diff should match default budget meta data diff`() {
+            // arrange
+            val file = File(this::class.java.getResource("BudgetMetaData.ydiff").file)
+            val ynabParser = YnabParser()
+
+            // act
+            val actualDiff = ynabParser.parseDiff(file)
+
+            // assert
+            val expected = YBudgetMetaDataBuilder().build()
+            val expectedDiff = YDiffBuilder().plusItem(expected).build()
+            actualDiff shouldEqual expectedDiff
+        }
+
+        @Test
         fun `master category diff should match default master category diff`() {
             // arrange
             val file = File(this::class.java.getResource("MasterCategory.ydiff").file)

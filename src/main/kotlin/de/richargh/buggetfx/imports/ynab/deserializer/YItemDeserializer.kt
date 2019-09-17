@@ -29,6 +29,7 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
             YEntityType.PAYEE -> payee(node)
             YEntityType.TRANSACTION -> transaction(node)
             YEntityType.ACCOUNT -> account(node)
+            YEntityType.BUDGET_META_DATA -> budgetMetaData(node)
             YEntityType.MASTER_CATEGORY -> masterCategory(node)
             YEntityType.CATEGORY -> category(node)
             else              -> YItemUnknown(entityType)
@@ -83,6 +84,13 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
 
         return YAccount(
                 accountName)
+    }
+
+    private fun budgetMetaData(node: JsonNode): YItem {
+        val entityVersion = node["entityVersion"].asText().toYEntityVersion()
+
+        return YBudgetMetaData(
+                entityVersion)
     }
 
     private fun masterCategory(node: JsonNode): YItem {
