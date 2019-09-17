@@ -43,6 +43,21 @@ class YnabParserTest {
         }
 
         @Test
+        fun `account diff should match default account diff`() {
+            // arrange
+            val file = File(this::class.java.getResource("Account.ydiff").file)
+            val ynabParser = YnabParser()
+
+            // act
+            val actualDiff = ynabParser.parseDiff(file)
+
+            // assert
+            val expected = YAccountBuilder().build()
+            val expectedDiff = YDiffBuilder().plusItem(expected).build()
+            actualDiff shouldEqual expectedDiff
+        }
+
+        @Test
         fun `master category diff should match default master category diff`() {
             // arrange
             val file = File(this::class.java.getResource("MasterCategory.ydiff").file)

@@ -28,6 +28,7 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
         return when(entityType){
             YEntityType.PAYEE -> payee(node)
             YEntityType.TRANSACTION -> transaction(node)
+            YEntityType.ACCOUNT -> account(node)
             YEntityType.MASTER_CATEGORY -> masterCategory(node)
             YEntityType.CATEGORY -> category(node)
             else              -> YItemUnknown(entityType)
@@ -75,6 +76,13 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
                amount,
                accountId,
                memo)
+    }
+
+    private fun account(node: JsonNode): YItem {
+        val accountName = node["accountName"].asText()
+
+        return YAccount(
+                accountName)
     }
 
     private fun masterCategory(node: JsonNode): YItem {
