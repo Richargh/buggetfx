@@ -56,6 +56,21 @@ class YnabParserTest {
             val expectedDiff = YDiffBuilder().plusItem(expected).build()
             actualDiff shouldEqual expectedDiff
         }
+
+        @Test
+        fun `category diff should match default category diff`() {
+            // arrange
+            val file = File(this::class.java.getResource("Category.ydiff").file)
+            val ynabParser = YnabParser()
+
+            // act
+            val actualDiff = ynabParser.parseDiff(file)
+
+            // assert
+            val expected = YCategoryBuilder().build()
+            val expectedDiff = YDiffBuilder().plusItem(expected).build()
+            actualDiff shouldEqual expectedDiff
+        }
     }
 
 
