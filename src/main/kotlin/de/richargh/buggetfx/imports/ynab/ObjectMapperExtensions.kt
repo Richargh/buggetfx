@@ -12,6 +12,6 @@ inline fun <reified T> ObjectMapper.readValue(file: File) = readValue(file, T::c
 
 inline fun <reified T> SimpleModule.addDeserializer(deserializer: JsonDeserializer<T>) = addDeserializer(T::class.java, deserializer)
 
-fun JsonNode.asTextOrNull() = if(this.isNull){ null } else { this.asText() }
-fun JsonNode.asBooleanOrNull() = if(this.isNull){ null } else { this.asBoolean() }
-fun JsonNode.asDoubleOrNull() = if(this.isNull){ null } else { this.asDouble() }
+fun JsonNode?.asTextOrNull() = if(this == null || this.isNull){ null } else { this.asText() }
+fun JsonNode?.asBooleanOrNull() = if(this == null || this.isNull){ null } else { this.asBoolean() }
+fun JsonNode?.asDoubleOrNull() = if(this == null || this.isNull){ null } else { this.asDouble() }
