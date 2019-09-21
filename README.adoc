@@ -9,3 +9,15 @@ Run the application with `./gradlew run`.
 === Build & Test
 
 Build and test with `./gradlew build`.
+
+== Reverse Engineering YNAB
+
+First it helps if you have used YNAB for a couple of years. Then you have a lot of data to make assumptions.
+
+=== Entity Types
+
+This is how I found all entity types:
+
+* `cd <your ynab folder>`
+* `grep -rhro '"entityType": ".*"' . | sort | uniq -c | sort -bgr`
+
