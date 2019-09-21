@@ -9,12 +9,25 @@
 
   "items": [
       {
+        "entityVersion": "A-4",
+
+        "entityType": "masterCategory",
+        "entityId": "F9C3D722",
+
         "type": "OUTFLOW",
         "name": "Quarterly Bills",
-        "entityVersion": "A4",
-        "entityId": "A5",
-        "entityType": "masterCategory",
-        "note": null
+        "subCategories": [
+            {
+                "entityVersion": "A-5",
+
+                "entityType": "category",
+                "masterCategoryId": "F9C3D722",
+                "entityId": "A16",
+
+                "type": "OUTFLOW",
+                "name": "Rent/Mortgage"
+            }
+        ]
       }
   ]
 }

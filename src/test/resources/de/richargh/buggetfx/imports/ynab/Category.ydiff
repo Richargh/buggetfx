@@ -9,12 +9,14 @@
 
   "items": [
     {
-        "entityId": "A5",
-        "entityType": "category",
         "entityVersion": "A-5",
-        "masterCategoryId": "A4",
-        "name": "Coke",
-        "type": "OUTFLOW"
+
+        "entityType": "category",
+        "masterCategoryId": "A15",
+        "entityId": "A16",
+
+        "type": "OUTFLOW",
+        "name": "Rent/Mortgage"
     }
   ]
 }

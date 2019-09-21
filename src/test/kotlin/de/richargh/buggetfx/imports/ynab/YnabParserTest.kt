@@ -2,6 +2,7 @@ package de.richargh.buggetfx.imports.ynab
 
 import de.richargh.buggetfx.imports.ynab_builder.*
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -68,8 +69,11 @@ class YnabParserTest {
             val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val expected = YMasterCategoryBuilder().build()
-            val expectedDiff = YDiffBuilder().plusItem(expected).build()
+            val masterCategoryId = "F9C3D722"
+            val expectedCategory = YCategoryBuilder().withMasterCategoryId(masterCategoryId).build()
+            val expectedMasterCategory = YMasterCategoryBuilder()
+                    .withEntityId(masterCategoryId).plusSubCategory(expectedCategory).build()
+            val expectedDiff = YDiffBuilder().plusItem(expectedMasterCategory).build()
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
@@ -165,6 +169,21 @@ class YnabParserTest {
         fun `empty budget should match empty budget`() {
             // arrange
             val file = File(this::class.java.getResource("Empty.yfull").file)
+            val ynabParser = YnabParser()
+
+            // act
+            val actualFull = ynabParser.parseFull(file)
+
+            // assert
+            val expectedFull = YFullBuilder().build()
+            assertThat(actualFull).isEqualTo(expectedFull)
+        }
+
+        @Disabled
+        @Test
+        fun `single transaction budget should match expected budget`() {
+            // arrange
+            val file = File(this::class.java.getResource("SingleTransaction.yfull").file)
             val ynabParser = YnabParser()
 
             // act

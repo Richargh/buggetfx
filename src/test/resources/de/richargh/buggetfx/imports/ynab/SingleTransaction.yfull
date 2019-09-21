@@ -1,21 +1,9 @@
 {
-	"transactions": [
-	    {
-            "accountId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
-            "accepted": true,
-            "entityId": "09C115B4-E0DD-F355-3121-2C3FB69F6572",
-            "entityType": "transaction",
-            "date": "2013-04-26",
-            "entityVersion": "A-1",
-            "memo": "Golden Cherries",
-            "amount": 10,
-            "cleared": "Cleared",
-            "categoryId": "A15",
-            "payeeId": "9EEECCD1-3630-B33A-88BC-40FA6C3408B1"
-        }
-	],
-	"scheduledTransactions": [],
-	"accountMappings": [],
+	"fileMetaData": {
+        "currentKnowledge": "A-5,B-0",
+        "budgetDataVersion": "4.2",
+        "entityType": "fileMetaData"
+    },
 	"budgetMetaData": {
         "entityVersion": "A-0",
         "currencyLocale": "de_DE",
@@ -41,28 +29,29 @@
             "accountType": "Cash"
         }
 	],
+	"accountMappings": [],
 	"masterCategories": [
         {
-            "entityVersion": "A-2",
-            "entityId": "F9C3D722",
-            "sortableIndex": 2080374783,
+            "entityVersion": "A-4",
+
             "entityType": "masterCategory",
-            "expanded": true,
+            "entityId": "F9C3D722",
+
+            "type": "OUTFLOW",
+            "name": "Quarterly Bills",
+            "note": null,
             "subCategories": [
                 {
-                    "entityVersion": "A-3",
-                    "entityId": "A16",
-                    "sortableIndex": 0,
+                    "entityVersion": "A-5"
+
                     "entityType": "category",
-                    "type": "OUTFLOW",
-                    "cachedBalance": 0,
                     "masterCategoryId": "F9C3D722",
-                    "name": "Groceries"
+                    "entityId": "A16",
+
+                    "type": "OUTFLOW",
+                    "name": "Rent/Mortgage"
                 }
-            ],
-            "deleteable": true,
-            "type": "OUTFLOW",
-            "name": "Everyday Expenses"
+            ]
         }
 	],
 	"payees": [
@@ -79,10 +68,22 @@
             "name": "Wallmart"
         }
 	],
-	"monthlyBudgets": [],
-	"fileMetaData": {
-        "currentKnowledge": "A-5,B-0",
-        "budgetDataVersion": "4.2",
-        "entityType": "fileMetaData"
-    }
+	"transactions": [
+	    {
+            "entityVersion": "A-1",
+
+            "entityType": "transaction",
+            "entityId": "09C115B4-E0DD-F355-3121-2C3FB69F6572",
+            "accountId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
+            "payeeId": "9EEECCD1-3630-B33A-88BC-40FA6C3408B1"
+            "categoryId": "A15",
+            "date": "2013-04-26",
+            "accepted": true,
+            "memo": "Golden Cherries",
+            "amount": 10,
+            "cleared": "Cleared",
+        }
+	],
+	"scheduledTransactions": [],
+	"monthlyBudgets": []
 }

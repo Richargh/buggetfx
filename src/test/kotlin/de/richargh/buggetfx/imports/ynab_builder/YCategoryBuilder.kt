@@ -1,9 +1,28 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
+import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
+import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
 import de.richargh.buggetfx.imports.ynab.model.entity.YCategory
-import de.richargh.buggetfx.imports.ynab.model.entity.YItem
+import de.richargh.buggetfx.imports.ynab.model.entity.YCategoryType
 
 class YCategoryBuilder {
+
+    private var entityVersion = "A-5".toYEntityVersion()
+
+    private var masterCategoryId = "A15".toYEntityId()
+    private var entityId = "A16".toYEntityId()
+    private var type = YCategoryType.OUTFLOW
+
+    private var name = "Rent/Mortgage"
+
     fun build() = YCategory(
-            "Coke")
+            entityVersion,
+            masterCategoryId,
+            entityId,
+            type,
+            name)
+
+    fun withMasterCategoryId(masterCategoryId: String) = apply {
+        this.masterCategoryId = masterCategoryId.toYEntityId()
+    }
 }

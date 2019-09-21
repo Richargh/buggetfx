@@ -30,7 +30,7 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
             YEntityType.ACCOUNT          -> account(node)
             YEntityType.BUDGET_META_DATA -> budgetMetaData(node)
             YEntityType.MASTER_CATEGORY  -> masterCategory(node)
-            YEntityType.CATEGORY         -> category(node)
+            YEntityType.CATEGORY         -> subCategory(node)
             else                         -> YItemUnknown(entityType)
         }
     }
@@ -147,16 +147,36 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
     }
 
     private fun masterCategory(node: JsonNode): YItem {
+        val entityVersion = node["entityVersion"].asText().toYEntityVersion()
+        val entityId = node["entityId"].asText().toYEntityId()
+        val type = node["type"].asText().toYCategoryType()
         val name = node["name"].asText()
 
+        val subCategories = mutableListOf<YCategory>()
+        node["subCategories"].elements().forEach {
+            subCategories.add(subCategory(it))
+        }
+
         return YMasterCategory(
-                name)
+                entityVersion,
+                entityId,
+                type,
+                name,
+                subCategories)
     }
 
-    private fun category(node: JsonNode): YItem {
+    private fun subCategory(node: JsonNode): YCategory {
+        val entityVersion = node["entityVersion"].asText().toYEntityVersion()
+        val masterCategoryId = node["masterCategoryId"].asText().toYEntityId()
+        val entityId = node["entityId"].asText().toYEntityId()
+        val type = node["type"].asText().toYCategoryType()
         val name = node["name"].asText()
 
         return YCategory(
+                entityVersion,
+                masterCategoryId,
+                entityId,
+                type,
                 name)
     }
 }
