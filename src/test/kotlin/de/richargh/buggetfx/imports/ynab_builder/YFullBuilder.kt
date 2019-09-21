@@ -5,8 +5,11 @@ import de.richargh.buggetfx.imports.ynab.model.budget.YFull
 
 class YFullBuilder {
 
+    private var fileMetaData = YFileMetaDataBuilder().build()
     private var transactions: List<YTransaction> = emptyList()
 
-    fun build() = YFull(transactions)
+    fun build() = YFull(
+            fileMetaData,
+            transactions)
 
 }

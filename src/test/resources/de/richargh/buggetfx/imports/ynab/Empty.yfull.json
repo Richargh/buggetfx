@@ -1,11 +1,15 @@
 {
-	"transactions": [],
-	"scheduledTransactions": [],
-	"accountMappings": [],
-	"budgetMetaData": {},
+	"fileMetaData": {
+		"entityType": "fileMetaData",
+		"budgetDataVersion": "4.2",
+		"currentKnowledge": "A-1711,B-3,C-295,D-656,E-69"
+	},
 	"accounts": [],
+	"accountMappings": [],
 	"masterCategories": [],
 	"payees": [],
-	"monthlyBudgets": [],
-	"fileMetaData": {}
+	"transactions": [],
+	"scheduledTransactions": [],
+	"budgetMetaData": {},
+	"monthlyBudgets": []
 }

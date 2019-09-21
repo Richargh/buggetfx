@@ -1,3 +1,7 @@
 package de.richargh.buggetfx.imports.ynab.model.budget
 
-data class YFull(val transactions: List<YTransaction>)
+import de.richargh.buggetfx.imports.ynab.model.entity.YFileMetaData
+
+data class YFull(
+        val fileMetaData: YFileMetaData,
+        val transactions: List<YTransaction>)
