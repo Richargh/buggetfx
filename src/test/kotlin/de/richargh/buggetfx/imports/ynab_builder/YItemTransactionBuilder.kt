@@ -2,6 +2,7 @@ package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.*
 import de.richargh.buggetfx.imports.ynab.model.entity.YItemMatchedTransaction
+import de.richargh.buggetfx.imports.ynab.model.entity.YItemSubTransaction
 import de.richargh.buggetfx.imports.ynab.model.entity.YItemTransaction
 import de.richargh.buggetfx.time.Cronus
 
@@ -19,9 +20,10 @@ class YItemTransactionBuilder {
             -104.19,
             "C8847157-E05B-49FA-86AA-5D60556A5E9D".toYAccountId(),
             "for the Horde",
-            matchedTransactions)
+            matchedTransactions,
+            emptyList())
 
-    fun plusMatchedTransaction(expected: YItemMatchedTransaction) = apply {
-        matchedTransactions.add(expected)
+    fun plusMatchedTransaction(matchedTransaction: YItemMatchedTransaction) = apply {
+        matchedTransactions.add(matchedTransaction)
     }
 }

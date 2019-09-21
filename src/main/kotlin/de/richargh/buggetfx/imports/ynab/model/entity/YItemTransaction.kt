@@ -13,7 +13,10 @@ data class YItemTransaction(
     val amount: Double,
     val accountId: YAccountId,
     val memo: String?,
-    val matchedTransactions: List<YItemMatchedTransaction>?): YItem{
+    val matchedTransactions: List<YItemMatchedTransaction>,
+    val subTransactions: List<YItemSubTransaction>): YItem{
 
     val entityType: YEntityType = YEntityType.TRANSACTION
 }
+
+val SPLIT_CATEGORY = YCategoryId("Category/__Split__")

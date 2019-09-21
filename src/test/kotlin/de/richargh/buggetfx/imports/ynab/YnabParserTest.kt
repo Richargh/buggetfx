@@ -107,6 +107,41 @@ class YnabParserTest {
         }
 
         @Test
+        fun `sub transaction diff should match default sub transaction diff`() {
+            // arrange
+            val file = File(this::class.java.getResource("SubTransaction.ydiff").file)
+            val ynabParser = YnabParser()
+
+            // act
+            val actualDiff = ynabParser.parseDiff(file)
+
+            // assert
+            val parentTransactionId = "97F314EA-91FB-19AB-8396-CE0004ADDC20"
+            val expectedA4 = YItemSubTransactionBuilder()
+                    .withVersion("A-4")
+                    .withParentTransactionId(parentTransactionId)
+                    .withEntityId("06EE8FB8-B340-BB11-322A-EDF9B29856BE")
+                    .withCategoryId("C5B7787D-85C6-CB4C-DC7F-D0D3559DF05C")
+                    .withAmount(-100.00)
+                    .withMemo("Horde!")
+                    .build()
+            val expectedA5 = YItemSubTransactionBuilder()
+                    .withVersion("A-5")
+                    .withParentTransactionId(parentTransactionId)
+                    .withEntityId("820CE5CF-A970-9B97-8446-EDF9B298BA5F")
+                    .withCategoryId("2E45C5BA-06BC-17F4-08CF-D0E31EE589D5")
+                    .withAmount(-4.19)
+                    .withoutMemo()
+                    .build()
+            val expectedTransaction = YItemTransactionWithSubTransactionsBuilder()
+                    .withEntityId(parentTransactionId)
+                    .plusSubTransactions(expectedA4, expectedA5)
+                    .build()
+            val expectedDiff = YDiffBuilder().plusItem(expectedTransaction).build()
+            assertThat(actualDiff).isEqualTo(expectedDiff)
+        }
+
+        @Test
         fun `transaction diff should match default transaction diff`() {
             // arrange
             val file = File(this::class.java.getResource("Transaction.ydiff").file)

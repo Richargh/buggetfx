@@ -8,6 +8,7 @@ sealed class YEntityType: SealedEnum() {
     object CATEGORY: YEntityType()
     object MASTER_CATEGORY: YEntityType()
     object MATCHED_TRANSACTION: YEntityType()
+    object SUB_TRANSACTION: YEntityType()
     object PAYEE: YEntityType()
     object TRANSACTION: YEntityType()
 
@@ -21,6 +22,7 @@ fun String.toYEntityType() = when (this) {
     "masterCategory"    -> YEntityType.MASTER_CATEGORY
     "matchedTransaction" -> YEntityType.MATCHED_TRANSACTION
     "payee"      -> YEntityType.PAYEE
+    "subTransaction" -> YEntityType.SUB_TRANSACTION
     "transaction" -> YEntityType.TRANSACTION
     else            -> YEntityType.UNKNOWN(this)
 }

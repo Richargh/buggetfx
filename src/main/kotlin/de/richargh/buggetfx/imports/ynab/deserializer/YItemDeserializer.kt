@@ -71,6 +71,11 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
             matchedTransactions.add(matchedTransaction(it))
         }
 
+        val subTransactions = mutableListOf<YItemSubTransaction>()
+        node["subTransactions"].elements().forEach {
+            subTransactions.add(subTransaction(it))
+        }
+
         return YItemTransaction(
                 date,
                 entityId,
@@ -81,7 +86,8 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
                 amount,
                 accountId,
                 memo,
-                matchedTransactions)
+                matchedTransactions,
+                subTransactions)
     }
 
     private fun matchedTransaction(node: JsonNode): YItemMatchedTransaction {
@@ -104,6 +110,25 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
                 entityVersion,
                 amount,
                 accountId,
+                memo)
+    }
+
+    private fun subTransaction(node: JsonNode): YItemSubTransaction {
+        val entityVersion = node["entityVersion"].asText().toYEntityVersion()
+
+        val parentTransactionId = node["parentTransactionId"].asText().toYEntityId()
+        val entityId = node["entityId"].asText().toYEntityId()
+        val categoryId = node["categoryId"].asText().toYCategoryId()
+
+        val amount = node["amount"].asDouble()
+        val memo = node["memo"].asTextOrNull()
+
+        return YItemSubTransaction(
+                parentTransactionId,
+                entityId,
+                categoryId,
+                entityVersion,
+                amount,
                 memo)
     }
 
