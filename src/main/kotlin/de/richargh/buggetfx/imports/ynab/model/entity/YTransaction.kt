@@ -18,5 +18,3 @@ data class YTransaction(
 
     override val entityType: YEntityType = YEntityType.TRANSACTION
 }
-
-val SPLIT_CATEGORY = YCategoryId("Category/__Split__")

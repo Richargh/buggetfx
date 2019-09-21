@@ -1,10 +1,6 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
-import de.richargh.buggetfx.imports.ynab.model.base.toYAccountId
-import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
-import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.base.toYPayeeId
-import de.richargh.buggetfx.imports.ynab.model.entity.SPLIT_CATEGORY
+import de.richargh.buggetfx.imports.ynab.model.base.*
 import de.richargh.buggetfx.imports.ynab.model.entity.YSubTransaction
 import de.richargh.buggetfx.imports.ynab.model.entity.YTransaction
 import de.richargh.buggetfx.time.Cronus
@@ -18,7 +14,7 @@ class YTransactionWithSubTransactionsBuilder {
         return YTransaction(
                 Cronus.of(2018, 7, 6),
                 entityId,
-                SPLIT_CATEGORY,
+                YCategoryId.SPLIT,
                 null,
                 "C45B535E-4AAD-C2FD-7A91-46F1AE68A6ED".toYPayeeId(),
                 "A-5".toYEntityVersion(),
