@@ -1,3 +1,3 @@
 package de.richargh.buggetfx.imports.ynab.model.entity
 
-data class YItemUnknown(val entityType: YEntityType): YItem
+data class YItemUnknown(override val entityType: YEntityType): YItem

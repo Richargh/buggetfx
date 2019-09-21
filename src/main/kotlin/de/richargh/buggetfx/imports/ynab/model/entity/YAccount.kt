@@ -10,4 +10,6 @@ data class YAccount(
         val accountType: YAccountType,
 
         val accountName: String,
-        val lastReconciledBalance: Double) : YItem
+        val lastReconciledBalance: Double) : YItem{
+    override val entityType: YEntityType = YEntityType.ACCOUNT
+}

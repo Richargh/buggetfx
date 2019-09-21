@@ -11,5 +11,5 @@ data class YItemPayee(
         val entityId: YEntityId,
         val autoFillCategoryId: YAutofillCategoryId,
         val autoFillAmount: Double): YItem {
-    val entityType: YEntityType = YEntityType.PAYEE
+    override val entityType: YEntityType = YEntityType.PAYEE
 }

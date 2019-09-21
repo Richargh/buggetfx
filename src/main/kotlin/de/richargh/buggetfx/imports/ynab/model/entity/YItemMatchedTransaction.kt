@@ -14,5 +14,5 @@ data class YItemMatchedTransaction(
     val accountId: YAccountId,
     val memo: String?): YItem{
 
-    val entityType: YEntityType = YEntityType.MATCHED_TRANSACTION
+    override val entityType: YEntityType = YEntityType.MATCHED_TRANSACTION
 }

@@ -8,4 +8,6 @@ data class YMasterCategory(
         val entityId: YEntityId,
         val type: YCategoryType,
         val name: String,
-        val subCategories: List<YCategory>): YItem
+        val subCategories: List<YCategory>): YItem{
+    override val entityType: YEntityType = YEntityType.MASTER_CATEGORY
+}

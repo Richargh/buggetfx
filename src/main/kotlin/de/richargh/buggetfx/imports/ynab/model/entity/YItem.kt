@@ -1,3 +1,5 @@
 package de.richargh.buggetfx.imports.ynab.model.entity
 
-interface YItem
+interface YItem{
+    val entityType: YEntityType
+}

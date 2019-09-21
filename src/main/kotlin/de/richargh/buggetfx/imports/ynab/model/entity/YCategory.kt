@@ -5,6 +5,7 @@ import de.richargh.buggetfx.imports.ynab.model.base.YEntityVersion
 
 data class YCategory(
         val entityVersion: YEntityVersion,
+
         val masterCategoryId: YEntityId,
         val entityId: YEntityId,
         val type: YCategoryType,

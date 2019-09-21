@@ -12,5 +12,5 @@ data class YItemSubTransaction(
         val amount: Double,
         val memo: String?): YItem {
 
-    val entityType: YEntityType = YEntityType.SUB_TRANSACTION
+    override val entityType: YEntityType = YEntityType.SUB_TRANSACTION
 }

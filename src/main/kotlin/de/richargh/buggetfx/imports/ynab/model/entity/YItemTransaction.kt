@@ -16,7 +16,7 @@ data class YItemTransaction(
     val matchedTransactions: List<YItemMatchedTransaction>,
     val subTransactions: List<YItemSubTransaction>): YItem{
 
-    val entityType: YEntityType = YEntityType.TRANSACTION
+    override val entityType: YEntityType = YEntityType.TRANSACTION
 }
 
 val SPLIT_CATEGORY = YCategoryId("Category/__Split__")
