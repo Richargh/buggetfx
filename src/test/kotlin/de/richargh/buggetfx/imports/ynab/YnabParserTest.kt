@@ -1,7 +1,6 @@
 package de.richargh.buggetfx.imports.ynab
 
 import de.richargh.buggetfx.imports.ynab_builder.*
-import org.amshove.kluent.shouldEqual
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
@@ -26,7 +25,7 @@ class YnabParserTest {
             // assert
             val expected = YAccountBuilder().build()
             val expectedDiff = YDiffBuilder().plusItem(expected).build()
-            actualDiff shouldEqual expectedDiff
+            assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
         @Test
@@ -41,7 +40,7 @@ class YnabParserTest {
             // assert
             val expected = YBudgetMetaDataBuilder().build()
             val expectedDiff = YDiffBuilder().plusItem(expected).build()
-            actualDiff shouldEqual expectedDiff
+            assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
         @Test
@@ -56,7 +55,7 @@ class YnabParserTest {
             // assert
             val expected = YCategoryBuilder().build()
             val expectedDiff = YDiffBuilder().plusItem(expected).build()
-            actualDiff shouldEqual expectedDiff
+            assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
         @Test
@@ -71,7 +70,7 @@ class YnabParserTest {
             // assert
             val expected = YMasterCategoryBuilder().build()
             val expectedDiff = YDiffBuilder().plusItem(expected).build()
-            actualDiff shouldEqual expectedDiff
+            assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
         @Test
@@ -103,7 +102,7 @@ class YnabParserTest {
             // assert
             val expected = YItemPayeeBuilder().build()
             val expectedDiff = YDiffBuilder().plusItem(expected).build()
-            actualDiff shouldEqual expectedDiff
+            assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
         @Test
@@ -153,7 +152,7 @@ class YnabParserTest {
             // assert
             val expected = YItemTransactionBuilder().build()
             val expectedDiff = YDiffBuilder().plusItem(expected).build()
-            actualDiff shouldEqual expectedDiff
+            assertThat(actualDiff).isEqualTo(expectedDiff)
         }
     }
 
@@ -169,11 +168,11 @@ class YnabParserTest {
             val ynabParser = YnabParser()
 
             // act
-            val actual = ynabParser.parseFull(file)
+            val actualFull = ynabParser.parseFull(file)
 
             // assert
-            val expected = YFullBuilder().build()
-            actual shouldEqual expected
+            val expectedFull = YFullBuilder().build()
+            assertThat(actualFull).isEqualTo(expectedFull)
         }
     }
 }
