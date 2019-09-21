@@ -9,12 +9,13 @@
 
   "items": [
      {
-        "entityId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
-        "entityType": "account",
         "entityVersion": "A-5",
-        "accountName": "Best Bank",
+
+        "entityType": "account",
+        "entityId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
         "accountType": "Cash",
-        "lastEnteredCheckNumber": -1,
+
+        "accountName": "Best Bank",
         "lastReconciledBalance": 1632.99
      }
   ]

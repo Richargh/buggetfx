@@ -133,10 +133,19 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
     }
 
     private fun account(node: JsonNode): YItem {
+        val entityVersion = node["entityVersion"].asText().toYEntityVersion()
+        val entityId = node["entityId"].asText().toYEntityId()
+
+        val accountType = node["accountType"].asText().toYAccountType()
         val accountName = node["accountName"].asText()
+        val lastReconciledBalance = node["lastReconciledBalance"].asDouble()
 
         return YAccount(
-                accountName)
+                entityVersion,
+                entityId,
+                accountType,
+                accountName,
+                lastReconciledBalance)
     }
 
     private fun budgetMetaData(node: JsonNode): YItem {
