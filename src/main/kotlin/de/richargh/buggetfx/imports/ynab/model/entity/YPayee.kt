@@ -3,7 +3,7 @@ package de.richargh.buggetfx.imports.ynab.model.entity
 import de.richargh.buggetfx.imports.ynab.model.base.YEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.YEntityVersion
 
-data class YItemPayee(
+data class YPayee(
         val autoFillMemo: String?,
         val name: String,
         val enabled: Boolean,

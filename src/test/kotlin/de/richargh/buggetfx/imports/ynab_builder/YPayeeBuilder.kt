@@ -3,14 +3,14 @@ package de.richargh.buggetfx.imports.ynab_builder
 import de.richargh.buggetfx.imports.ynab.model.entity.toYAutofillCategoryId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.entity.YItemPayee
+import de.richargh.buggetfx.imports.ynab.model.entity.YPayee
 
-class YItemPayeeBuilder {
+class YPayeeBuilder {
 
     private var entityVersion = "A-5".toYEntityVersion()
 
-    fun build(): YItemPayee {
-        return YItemPayee(
+    fun build(): YPayee {
+        return YPayee(
                 "no memo",
                 "no name",
                 true,

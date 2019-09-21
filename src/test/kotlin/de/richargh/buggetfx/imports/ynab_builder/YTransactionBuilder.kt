@@ -1,16 +1,15 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.*
-import de.richargh.buggetfx.imports.ynab.model.entity.YItemMatchedTransaction
-import de.richargh.buggetfx.imports.ynab.model.entity.YItemSubTransaction
-import de.richargh.buggetfx.imports.ynab.model.entity.YItemTransaction
+import de.richargh.buggetfx.imports.ynab.model.entity.YMatchedTransaction
+import de.richargh.buggetfx.imports.ynab.model.entity.YTransaction
 import de.richargh.buggetfx.time.Cronus
 
-class YItemTransactionBuilder {
+class YTransactionBuilder {
 
-    private var matchedTransactions = mutableListOf<YItemMatchedTransaction>()
+    private var matchedTransactions = mutableListOf<YMatchedTransaction>()
 
-    fun build() = YItemTransaction(
+    fun build() = YTransaction(
             Cronus.of(2018, 7, 6),
             "97F314EA-91FB-19AB-8396-CE0004ADDC20".toYEntityId(),
             "3A471795-F8F2-7727-F36C-D0D1A4E8C4F9".toYCategoryId(),
@@ -23,7 +22,7 @@ class YItemTransactionBuilder {
             matchedTransactions,
             emptyList())
 
-    fun plusMatchedTransaction(matchedTransaction: YItemMatchedTransaction) = apply {
+    fun plusMatchedTransaction(matchedTransaction: YMatchedTransaction) = apply {
         matchedTransactions.add(matchedTransaction)
     }
 }

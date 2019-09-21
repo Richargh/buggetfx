@@ -44,7 +44,7 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
         val autoFillCategoryId = node["autoFillCategoryId"].asText().toYAutofillCategoryId()
         val autoFillAmount = node["autoFillAmount"].asDouble()
 
-        return YItemPayee(
+        return YPayee(
                 autoFillMemo,
                 name,
                 enabled,
@@ -66,17 +66,17 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
         val accountId = node["accountId"].asText().toYAccountId()
         val memo = node["memo"].asTextOrNull()
 
-        val matchedTransactions = mutableListOf<YItemMatchedTransaction>()
+        val matchedTransactions = mutableListOf<YMatchedTransaction>()
         node["matchedTransactions"].elements().forEach {
             matchedTransactions.add(matchedTransaction(it))
         }
 
-        val subTransactions = mutableListOf<YItemSubTransaction>()
+        val subTransactions = mutableListOf<YSubTransaction>()
         node["subTransactions"].elements().forEach {
             subTransactions.add(subTransaction(it))
         }
 
-        return YItemTransaction(
+        return YTransaction(
                 date,
                 entityId,
                 categoryId,
@@ -90,7 +90,7 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
                 subTransactions)
     }
 
-    private fun matchedTransaction(node: JsonNode): YItemMatchedTransaction {
+    private fun matchedTransaction(node: JsonNode): YMatchedTransaction {
         val date = parseMoment(node["date"].asText())
         val entityId = node["entityId"].asText().toYEntityId()
         val categoryId = node["categoryId"].asText().toYCategoryId()
@@ -101,7 +101,7 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
         val accountId = node["accountId"].asText().toYAccountId()
         val memo = node["memo"].asTextOrNull()
 
-        return YItemMatchedTransaction(
+        return YMatchedTransaction(
                 date,
                 entityId,
                 categoryId,
@@ -113,7 +113,7 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
                 memo)
     }
 
-    private fun subTransaction(node: JsonNode): YItemSubTransaction {
+    private fun subTransaction(node: JsonNode): YSubTransaction {
         val entityVersion = node["entityVersion"].asText().toYEntityVersion()
 
         val parentTransactionId = node["parentTransactionId"].asText().toYEntityId()
@@ -123,7 +123,7 @@ class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDese
         val amount = node["amount"].asDouble()
         val memo = node["memo"].asTextOrNull()
 
-        return YItemSubTransaction(
+        return YSubTransaction(
                 parentTransactionId,
                 entityId,
                 categoryId,

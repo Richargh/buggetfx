@@ -3,7 +3,7 @@ package de.richargh.buggetfx.imports.ynab.model.entity
 import de.richargh.buggetfx.imports.ynab.model.base.*
 import de.richargh.buggetfx.time.Moment
 
-data class YItemTransaction(
+data class YMatchedTransaction(
     val date: Moment,
     val entityId: YEntityId,
     val categoryId: YCategoryId,
@@ -12,11 +12,7 @@ data class YItemTransaction(
     val entityVersion: YEntityVersion,
     val amount: Double,
     val accountId: YAccountId,
-    val memo: String?,
-    val matchedTransactions: List<YItemMatchedTransaction>,
-    val subTransactions: List<YItemSubTransaction>): YItem{
+    val memo: String?): YItem{
 
-    override val entityType: YEntityType = YEntityType.TRANSACTION
+    override val entityType: YEntityType = YEntityType.MATCHED_TRANSACTION
 }
-
-val SPLIT_CATEGORY = YCategoryId("Category/__Split__")

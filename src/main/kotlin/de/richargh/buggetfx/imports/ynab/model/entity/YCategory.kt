@@ -10,4 +10,7 @@ data class YCategory(
         val entityId: YEntityId,
         val type: YCategoryType,
 
-        val name: String): YItem
+        val name: String): YItem{
+
+    override val entityType = YEntityType.CATEGORY
+}

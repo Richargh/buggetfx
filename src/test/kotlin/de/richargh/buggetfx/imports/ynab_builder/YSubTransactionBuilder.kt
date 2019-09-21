@@ -1,10 +1,9 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.*
-import de.richargh.buggetfx.imports.ynab.model.entity.YItemSubTransaction
-import de.richargh.buggetfx.time.Cronus
+import de.richargh.buggetfx.imports.ynab.model.entity.YSubTransaction
 
-class YItemSubTransactionBuilder {
+class YSubTransactionBuilder {
 
     private var parentTransactionId = "bla".toYEntityId()
     private var entityId = "foo".toYEntityId()
@@ -13,8 +12,8 @@ class YItemSubTransactionBuilder {
     private var amount = -104.19
     private var memo: String? = "maybe for the Horde"
 
-    fun build(): YItemSubTransaction {
-        return YItemSubTransaction(
+    fun build(): YSubTransaction {
+        return YSubTransaction(
                 parentTransactionId,
                 entityId,
                 categoryId,

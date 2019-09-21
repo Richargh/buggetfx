@@ -1,12 +1,12 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.*
-import de.richargh.buggetfx.imports.ynab.model.entity.YItemMatchedTransaction
+import de.richargh.buggetfx.imports.ynab.model.entity.YMatchedTransaction
 import de.richargh.buggetfx.time.Cronus
 
-class YItemMatchedTransactionBuilder {
+class YMatchedTransactionBuilder {
 
-    fun build() = YItemMatchedTransaction(
+    fun build() = YMatchedTransaction(
             Cronus.of(2018, 7, 6),
             "97F314EA-91FB-19AB-8396-CE0004ADDC20/MatchedTransaction/Transaction/YNAB:-30,00:2019-02-28:1".toYEntityId(),
             "3A471795-F8F2-7727-F36C-D0D1A4E8C4F9".toYCategoryId(),

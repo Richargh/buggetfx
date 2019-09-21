@@ -4,7 +4,7 @@ import de.richargh.buggetfx.imports.ynab.model.base.YCategoryId
 import de.richargh.buggetfx.imports.ynab.model.base.YEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.YEntityVersion
 
-data class YItemSubTransaction(
+data class YSubTransaction(
         val parentTransactionId: YEntityId,
         val entityId: YEntityId,
         val categoryId: YCategoryId,

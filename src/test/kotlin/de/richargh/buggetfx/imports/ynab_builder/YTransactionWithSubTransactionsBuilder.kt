@@ -5,17 +5,17 @@ import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
 import de.richargh.buggetfx.imports.ynab.model.base.toYPayeeId
 import de.richargh.buggetfx.imports.ynab.model.entity.SPLIT_CATEGORY
-import de.richargh.buggetfx.imports.ynab.model.entity.YItemSubTransaction
-import de.richargh.buggetfx.imports.ynab.model.entity.YItemTransaction
+import de.richargh.buggetfx.imports.ynab.model.entity.YSubTransaction
+import de.richargh.buggetfx.imports.ynab.model.entity.YTransaction
 import de.richargh.buggetfx.time.Cronus
 
-class YItemTransactionWithSubTransactionsBuilder {
+class YTransactionWithSubTransactionsBuilder {
 
     private var entityId = "97F314EA-91FB-19AB-8396-CE0004ADDC20".toYEntityId()
-    private var subTransactions = mutableListOf<YItemSubTransaction>()
+    private var subTransactions = mutableListOf<YSubTransaction>()
 
-    fun build(): YItemTransaction {
-        return YItemTransaction(
+    fun build(): YTransaction {
+        return YTransaction(
                 Cronus.of(2018, 7, 6),
                 entityId,
                 SPLIT_CATEGORY,
@@ -29,7 +29,7 @@ class YItemTransactionWithSubTransactionsBuilder {
                 subTransactions)
     }
 
-    fun plusSubTransactions(vararg subTransactions: YItemSubTransaction) = apply {
+    fun plusSubTransactions(vararg subTransactions: YSubTransaction) = apply {
         subTransactions.forEach { this.subTransactions.add(it) }
     }
 

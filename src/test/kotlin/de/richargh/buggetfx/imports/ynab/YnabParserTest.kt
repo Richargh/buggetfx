@@ -87,8 +87,8 @@ class YnabParserTest {
             val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val expected = YItemMatchedTransactionBuilder().build()
-            val expectedTransaction = YItemTransactionBuilder().plusMatchedTransaction(expected).build()
+            val expected = YMatchedTransactionBuilder().build()
+            val expectedTransaction = YTransactionBuilder().plusMatchedTransaction(expected).build()
             val expectedDiff = YDiffBuilder().plusItem(expectedTransaction).build()
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
@@ -104,7 +104,7 @@ class YnabParserTest {
             val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val expected = YItemPayeeBuilder().build()
+            val expected = YPayeeBuilder().build()
             val expectedDiff = YDiffBuilder().plusItem(expected).build()
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
@@ -120,7 +120,7 @@ class YnabParserTest {
 
             // assert
             val parentTransactionId = "97F314EA-91FB-19AB-8396-CE0004ADDC20"
-            val expectedA4 = YItemSubTransactionBuilder()
+            val expectedA4 = YSubTransactionBuilder()
                     .withVersion("A-4")
                     .withParentTransactionId(parentTransactionId)
                     .withEntityId("06EE8FB8-B340-BB11-322A-EDF9B29856BE")
@@ -128,7 +128,7 @@ class YnabParserTest {
                     .withAmount(-100.00)
                     .withMemo("Horde!")
                     .build()
-            val expectedA5 = YItemSubTransactionBuilder()
+            val expectedA5 = YSubTransactionBuilder()
                     .withVersion("A-5")
                     .withParentTransactionId(parentTransactionId)
                     .withEntityId("820CE5CF-A970-9B97-8446-EDF9B298BA5F")
@@ -136,7 +136,7 @@ class YnabParserTest {
                     .withAmount(-4.19)
                     .withoutMemo()
                     .build()
-            val expectedTransaction = YItemTransactionWithSubTransactionsBuilder()
+            val expectedTransaction = YTransactionWithSubTransactionsBuilder()
                     .withEntityId(parentTransactionId)
                     .plusSubTransactions(expectedA4, expectedA5)
                     .build()
@@ -154,7 +154,7 @@ class YnabParserTest {
             val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val expected = YItemTransactionBuilder().build()
+            val expected = YTransactionBuilder().build()
             val expectedDiff = YDiffBuilder().plusItem(expected).build()
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
