@@ -42,7 +42,7 @@
             "note": null,
             "subCategories": [
                 {
-                    "entityVersion": "A-5"
+                    "entityVersion": "A-5",
 
                     "entityType": "category",
                     "masterCategoryId": "F9C3D722",
@@ -75,13 +75,13 @@
             "entityType": "transaction",
             "entityId": "09C115B4-E0DD-F355-3121-2C3FB69F6572",
             "accountId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
-            "payeeId": "9EEECCD1-3630-B33A-88BC-40FA6C3408B1"
+            "payeeId": "9EEECCD1-3630-B33A-88BC-40FA6C3408B1",
             "categoryId": "A15",
             "date": "2013-04-26",
             "accepted": true,
             "memo": "Golden Cherries",
             "amount": 10,
-            "cleared": "Cleared",
+            "cleared": "Cleared"
         }
 	],
 	"scheduledTransactions": [],

@@ -17,7 +17,7 @@ class YnabParserTest {
         @Test
         fun `account diff should match default account diff`() {
             // arrange
-            val file = File(this::class.java.getResource("Account.ydiff").file)
+            val file = File(this::class.java.getResource("Account.ydiff.json").file)
             val ynabParser = YnabParser()
 
             // act
@@ -32,7 +32,7 @@ class YnabParserTest {
         @Test
         fun `budget meta data diff should match default budget meta data diff`() {
             // arrange
-            val file = File(this::class.java.getResource("BudgetMetaData.ydiff").file)
+            val file = File(this::class.java.getResource("BudgetMetaData.ydiff.json").file)
             val ynabParser = YnabParser()
 
             // act
@@ -47,7 +47,7 @@ class YnabParserTest {
         @Test
         fun `category diff should match default category diff`() {
             // arrange
-            val file = File(this::class.java.getResource("Category.ydiff").file)
+            val file = File(this::class.java.getResource("Category.ydiff.json").file)
             val ynabParser = YnabParser()
 
             // act
@@ -62,7 +62,7 @@ class YnabParserTest {
         @Test
         fun `master category diff should match default master category diff`() {
             // arrange
-            val file = File(this::class.java.getResource("MasterCategory.ydiff").file)
+            val file = File(this::class.java.getResource("MasterCategory.ydiff.json").file)
             val ynabParser = YnabParser()
 
             // act
@@ -80,7 +80,7 @@ class YnabParserTest {
         @Test
         fun `matched transaction diff should match default matched transaction diff`() {
             // arrange
-            val file = File(this::class.java.getResource("MatchedTransaction.ydiff").file)
+            val file = File(this::class.java.getResource("MatchedTransaction.ydiff.json").file)
             val ynabParser = YnabParser()
 
             // act
@@ -97,7 +97,7 @@ class YnabParserTest {
         @Test
         fun `payee diff should match default payee diff`() {
             // arrange
-            val file = File(this::class.java.getResource("Payee.ydiff").file)
+            val file = File(this::class.java.getResource("Payee.ydiff.json").file)
             val ynabParser = YnabParser()
 
             // act
@@ -112,7 +112,7 @@ class YnabParserTest {
         @Test
         fun `sub transaction diff should match default sub transaction diff`() {
             // arrange
-            val file = File(this::class.java.getResource("SubTransaction.ydiff").file)
+            val file = File(this::class.java.getResource("SubTransaction.ydiff.json").file)
             val ynabParser = YnabParser()
 
             // act
@@ -147,7 +147,7 @@ class YnabParserTest {
         @Test
         fun `transaction diff should match default transaction diff`() {
             // arrange
-            val file = File(this::class.java.getResource("Transaction.ydiff").file)
+            val file = File(this::class.java.getResource("Transaction.ydiff.json").file)
             val ynabParser = YnabParser()
 
             // act
@@ -168,7 +168,7 @@ class YnabParserTest {
         @Test
         fun `empty budget should match empty budget`() {
             // arrange
-            val file = File(this::class.java.getResource("Empty.yfull").file)
+            val file = File(this::class.java.getResource("Empty.yfull.json").file)
             val ynabParser = YnabParser()
 
             // act
@@ -183,7 +183,7 @@ class YnabParserTest {
         @Test
         fun `single transaction budget should match expected budget`() {
             // arrange
-            val file = File(this::class.java.getResource("SingleTransaction.yfull").file)
+            val file = File(this::class.java.getResource("SingleTransaction.yfull.json").file)
             val ynabParser = YnabParser()
 
             // act
