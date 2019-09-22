@@ -18,21 +18,27 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeFormatterBuilder
 
-class YItemDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDeserializer<YItem>(vc) {
+class YMasterCategoryDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDeserializer<YMasterCategory>(vc) {
 
     @Throws(IOException::class, JsonProcessingException::class)
-    override fun deserialize(jp: JsonParser, ctxt: DeserializationContext): YItem {
+    override fun deserialize(jp: JsonParser, ctxt: DeserializationContext): YMasterCategory {
         val node: JsonNode = jp.codec.readTree(jp)
-        val entityType = node["entityType"].asText().toYEntityType()
 
-        return when (entityType) {
-            YEntityType.PAYEE            -> jp.codec.treeToValue(node, YPayee::class.java)
-            YEntityType.TRANSACTION      -> jp.codec.treeToValue(node, YTransaction::class.java)
-            YEntityType.ACCOUNT          -> jp.codec.treeToValue(node, YAccount::class.java)
-            YEntityType.BUDGET_META_DATA -> jp.codec.treeToValue(node, YBudgetMetaData::class.java)
-            YEntityType.MASTER_CATEGORY  -> jp.codec.treeToValue(node, YMasterCategory::class.java)
-            YEntityType.CATEGORY         -> jp.codec.treeToValue(node, YCategory::class.java)
-            else                         -> YItemUnknown(entityType)
+        val entityVersion = node["entityVersion"].asText().toYEntityVersion()
+        val entityId = node["entityId"].asText().toYEntityId()
+        val type = node["type"].asText().toYCategoryType()
+        val name = node["name"].asText()
+
+        val subCategories = mutableListOf<YCategory>()
+        node["subCategories"].elements().forEach {
+            subCategories.add(jp.codec.treeToValue(it, YCategory::class.java))
         }
+
+        return YMasterCategory(
+                entityVersion,
+                entityId,
+                type,
+                name,
+                subCategories)
     }
 }

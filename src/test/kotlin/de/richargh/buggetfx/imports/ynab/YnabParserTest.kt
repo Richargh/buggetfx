@@ -160,7 +160,6 @@ class YnabParserTest {
         }
     }
 
-
     @Nested
     @DisplayName("YFull")
     inner class Full {
@@ -190,7 +189,10 @@ class YnabParserTest {
             val actualFull = ynabParser.parseFull(file)
 
             // assert
-            val expectedFull = YFullBuilder().build()
+            val expectedTransaction = YTransactionBuilder().build()
+            val expectedFull = YFullBuilder()
+                    .withTransaction(expectedTransaction)
+                    .build()
             assertThat(actualFull).isEqualTo(expectedFull)
         }
     }
