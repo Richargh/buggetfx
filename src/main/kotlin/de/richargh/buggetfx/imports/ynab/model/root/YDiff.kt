@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.imports.ynab.model.diff
+package de.richargh.buggetfx.imports.ynab.model.root
 
 import de.richargh.buggetfx.imports.ynab.model.entity.YItem
 import de.richargh.buggetfx.time.Moment

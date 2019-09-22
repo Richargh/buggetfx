@@ -5,8 +5,8 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
 import com.fasterxml.jackson.databind.module.SimpleModule
 import de.richargh.buggetfx.imports.ynab.deserializer.*
-import de.richargh.buggetfx.imports.ynab.model.budget.YFull
-import de.richargh.buggetfx.imports.ynab.model.diff.YDiff
+import de.richargh.buggetfx.imports.ynab.model.root.YFull
+import de.richargh.buggetfx.imports.ynab.model.root.YDiff
 
 class YnabParser {
 

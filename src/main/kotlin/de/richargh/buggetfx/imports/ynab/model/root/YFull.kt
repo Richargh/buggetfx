@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.imports.ynab.model.budget
+package de.richargh.buggetfx.imports.ynab.model.root
 
 import de.richargh.buggetfx.imports.ynab.model.entity.YAccount
 import de.richargh.buggetfx.imports.ynab.model.entity.YBudgetMetaData

@@ -2,7 +2,6 @@ package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.budget.YFull
 import de.richargh.buggetfx.imports.ynab.model.entity.YAccount
 import de.richargh.buggetfx.imports.ynab.model.entity.YAccountType
 
