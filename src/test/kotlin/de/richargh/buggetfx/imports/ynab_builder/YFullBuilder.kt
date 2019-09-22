@@ -3,6 +3,7 @@ package de.richargh.buggetfx.imports.ynab_builder
 import de.richargh.buggetfx.imports.ynab.model.root.YFull
 import de.richargh.buggetfx.imports.ynab.model.item.YAccount
 import de.richargh.buggetfx.imports.ynab.model.item.YMasterCategory
+import de.richargh.buggetfx.imports.ynab.model.item.YPayee
 import de.richargh.buggetfx.imports.ynab.model.item.YTransaction
 
 class YFullBuilder {
@@ -12,6 +13,7 @@ class YFullBuilder {
 
     private var accounts = mutableListOf<YAccount>()
     private var masterCategories = mutableListOf<YMasterCategory>()
+    private var payees = mutableListOf<YPayee>()
     private var transactions = mutableListOf<YTransaction>()
 
     fun build() = YFull(
@@ -19,10 +21,12 @@ class YFullBuilder {
             budgetMetaData,
             accounts,
             masterCategories,
+            payees,
             transactions)
 
     operator fun YAccount.unaryPlus() { accounts.add(this) }
     operator fun YMasterCategory.unaryPlus() { masterCategories.add(this) }
+    operator fun YPayee.unaryPlus() { payees.add(this) }
     operator fun YTransaction.unaryPlus() { transactions.add(this) }
 }
 

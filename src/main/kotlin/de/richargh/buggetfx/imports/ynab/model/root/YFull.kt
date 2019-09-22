@@ -7,4 +7,5 @@ data class YFull(
         val budgetMetaData: YBudgetMetaData,
         val accounts: List<YAccount>,
         val masterCategories: List<YMasterCategory>,
+        val payees: List<YPayee>,
         val transactions: List<YTransaction>)

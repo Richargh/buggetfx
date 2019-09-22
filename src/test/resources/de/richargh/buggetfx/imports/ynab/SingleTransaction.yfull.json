@@ -1,84 +1,74 @@
 {
-	"fileMetaData": {
-        "currentKnowledge": "A-5,B-2",
-        "budgetDataVersion": "4.2",
-        "entityType": "fileMetaData"
-    },
-	"budgetMetaData": {
-        "entityVersion": "A-0",
-        "currencyLocale": "de_DE",
-        "dateLocale": "de_DE",
-        "budgetType": "Personal",
-        "strictBudget": "TRUE",
-        "entityId": "A2",
-        "entityType": "budgetMetaData",
-        "currencyISOSymbol": null
-    },
-	"accounts": [
+  "fileMetaData": {
+    "currentKnowledge": "A-5,B-2",
+    "budgetDataVersion": "4.2",
+    "entityType": "fileMetaData"
+  },
+  "budgetMetaData": {
+    "entityVersion": "A-0",
+    "currencyLocale": "de_DE",
+    "dateLocale": "de_DE",
+    "budgetType": "Personal",
+    "strictBudget": "TRUE",
+    "entityId": "A2",
+    "entityType": "budgetMetaData",
+    "currencyISOSymbol": null
+  },
+  "accounts": [
+    {
+      "entityVersion": "A-5",
+      "entityType": "account",
+      "entityId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
+      "accountType": "Cash",
+      "accountName": "Best Bank",
+      "lastReconciledBalance": 1632.99
+    }
+  ],
+  "accountMappings": [],
+  "masterCategories": [
+    {
+      "entityVersion": "A-4",
+      "entityType": "masterCategory",
+      "entityId": "F9C3D722",
+      "type": "OUTFLOW",
+      "name": "Quarterly Bills",
+      "note": null,
+      "subCategories": [
         {
-            "entityVersion": "A-5",
-
-            "entityType": "account",
-            "entityId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
-            "accountType": "Cash",
-
-            "accountName": "Best Bank",
-            "lastReconciledBalance": 1632.99
+          "entityVersion": "A-5",
+          "entityType": "category",
+          "masterCategoryId": "F9C3D722",
+          "entityId": "A16",
+          "type": "OUTFLOW",
+          "name": "Rent/Mortgage"
         }
-	],
-	"accountMappings": [],
-	"masterCategories": [
-        {
-            "entityVersion": "A-4",
-
-            "entityType": "masterCategory",
-            "entityId": "F9C3D722",
-
-            "type": "OUTFLOW",
-            "name": "Quarterly Bills",
-            "note": null,
-            "subCategories": [
-                {
-                    "entityVersion": "A-5",
-
-                    "entityType": "category",
-                    "masterCategoryId": "F9C3D722",
-                    "entityId": "A16",
-
-                    "type": "OUTFLOW",
-                    "name": "Rent/Mortgage"
-                }
-            ]
-        }
-	],
-	"payees": [
-	    {
-            "entityVersion": "D-238",
-            "enabled": true,
-            "entityId": "9EEECCD1-3630-B33A-88BC-40FA6C3408B1",
-            "entityType": "payee",
-            "renameConditions": null,
-            "autoFillMemo": "",
-            "locations": null,
-            "autoFillCategoryId": "Category/__ImmediateIncome__",
-            "autoFillAmount": 200,
-            "name": "Wallmart"
-        }
-	],
-	"transactions": [
-	    {
-            "entityVersion": "A-5",
-            "entityType": "transaction",
-            "entityId": "97F314EA-91FB-19AB-8396-CE0004ADDC20",
-
-            "accountId": "C8847157-E05B-49FA-86AA-5D60556A5E9D",
-            "payeeId": "C45B535E-4AAD-C2FD-7A91-46F1AE68A6ED",
-            "categoryId": "3A471795-F8F2-7727-F36C-D0D1A4E8C4F9",
-            "date": "2018-07-06",
-            "memo": "for the Horde",
-            "amount": -104.19
-        }
-	],
-	"scheduledTransactions": [],
-	"monthlyBudgets": []
+      ]
+    }
+  ],
+  "payees": [
+    {
+      "entityVersion": "A-5",
+      "entityType": "payee",
+      "name": "no name",
+      "entityId": "C45B535E-4AAD-C2FD-7A91-46F1AE68A6ED",
+      "autoFillCategoryId": "3A471795-F8F2-7727-F36C-D0D1A4E8C4F9",
+      "autoFillMemo": "no memo",
+      "autoFillAmount": -5.19
+    }
+  ],
+  "transactions": [
+    {
+      "entityVersion": "A-5",
+      "entityType": "transaction",
+      "entityId": "97F314EA-91FB-19AB-8396-CE0004ADDC20",
+      "accountId": "C8847157-E05B-49FA-86AA-5D60556A5E9D",
+      "payeeId": "C45B535E-4AAD-C2FD-7A91-46F1AE68A6ED",
+      "categoryId": "3A471795-F8F2-7727-F36C-D0D1A4E8C4F9",
+      "date": "2018-07-06",
+      "memo": "for the Horde",
+      "amount": -104.19
+    }
+  ],
+  "scheduledTransactions": [],
+  "monthlyBudgets": []
 }

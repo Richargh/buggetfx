@@ -184,6 +184,7 @@ class YnabParserTest {
             val expectedFull = yFull {
                 +yAccount { }
                 +yMasterCategory { +subCategory {  } }
+                +yPayee {  }
                 +yTransaction { }
             }
             assertThat(actualFull).isEqualTo(expectedFull)
