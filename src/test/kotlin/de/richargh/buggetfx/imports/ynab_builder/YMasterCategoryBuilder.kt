@@ -1,5 +1,6 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
+import de.richargh.buggetfx.imports.ynab.model.base.YEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
 import de.richargh.buggetfx.imports.ynab.model.item.YCategory
@@ -24,10 +25,16 @@ class YMasterCategoryBuilder {
                 subCategories)
     }
 
-    fun withEntityId(entityId: String) = apply { this.entityId = entityId.toYEntityId() }
+    infix fun entityId(entityId: String){ entityId(entityId.toYEntityId()) }
+    infix fun entityId(entityId: YEntityId){ this.entityId = entityId }
 
-    fun plusSubCategory(category: YCategory) = apply {
-        subCategories.add(category)
+    operator fun YCategory.unaryPlus() { subCategories.add(this) }
+
+    fun subCategory(init: YCategoryBuilder.() -> Unit): YCategory {
+        val builder = YCategoryBuilder()
+        builder.masterCategoryId(entityId)
+        builder.init()
+        return builder.build()
     }
 }
 

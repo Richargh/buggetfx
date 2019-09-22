@@ -1,5 +1,6 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
+import de.richargh.buggetfx.imports.ynab.model.base.YEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
 import de.richargh.buggetfx.imports.ynab.model.item.YCategory
@@ -22,9 +23,8 @@ class YCategoryBuilder {
             type,
             name)
 
-    fun withMasterCategoryId(masterCategoryId: String) = apply {
-        this.masterCategoryId = masterCategoryId.toYEntityId()
-    }
+    fun masterCategoryId(masterCategoryId: String){ masterCategoryId(masterCategoryId.toYEntityId()) }
+    fun masterCategoryId(masterCategoryId: YEntityId){ this.masterCategoryId = masterCategoryId }
 }
 
 fun yCategory(init: YCategoryBuilder.() -> Unit): YCategory {

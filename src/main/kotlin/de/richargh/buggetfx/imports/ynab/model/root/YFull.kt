@@ -1,12 +1,10 @@
 package de.richargh.buggetfx.imports.ynab.model.root
 
-import de.richargh.buggetfx.imports.ynab.model.item.YAccount
-import de.richargh.buggetfx.imports.ynab.model.item.YBudgetMetaData
-import de.richargh.buggetfx.imports.ynab.model.item.YFileMetaData
-import de.richargh.buggetfx.imports.ynab.model.item.YTransaction
+import de.richargh.buggetfx.imports.ynab.model.item.*
 
 data class YFull(
         val fileMetaData: YFileMetaData,
         val budgetMetaData: YBudgetMetaData,
         val accounts: List<YAccount>,
+        val masterCategories: List<YMasterCategory>,
         val transactions: List<YTransaction>)

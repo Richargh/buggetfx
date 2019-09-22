@@ -23,7 +23,7 @@ class YnabParserTest {
             val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val expectedDiff = yDiff { +yAccount {  } }
+            val expectedDiff = yDiff { +yAccount { } }
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
@@ -51,7 +51,7 @@ class YnabParserTest {
             val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val expectedDiff = yDiff { +yCategory {  } }
+            val expectedDiff = yDiff { +yCategory { } }
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
@@ -65,11 +65,11 @@ class YnabParserTest {
             val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val masterCategoryId = "F9C3D722"
-            val expectedCategory = YCategoryBuilder().withMasterCategoryId(masterCategoryId).build()
-            val expectedMasterCategory = YMasterCategoryBuilder()
-                    .withEntityId(masterCategoryId).plusSubCategory(expectedCategory).build()
-            val expectedDiff = yDiff { +expectedMasterCategory }
+            val expectedDiff = yDiff {
+                +yMasterCategory {
+                    +subCategory { }
+                }
+            }
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
@@ -99,7 +99,7 @@ class YnabParserTest {
             val actualDiff = ynabParser.parseDiff(file)
 
             // assert
-            val expectedDiff = yDiff { +yPayee {  } }
+            val expectedDiff = yDiff { +yPayee { } }
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
@@ -183,6 +183,7 @@ class YnabParserTest {
             // assert
             val expectedFull = yFull {
                 +yAccount { }
+                +yMasterCategory { +subCategory {  } }
                 +yTransaction { }
             }
             assertThat(actualFull).isEqualTo(expectedFull)
