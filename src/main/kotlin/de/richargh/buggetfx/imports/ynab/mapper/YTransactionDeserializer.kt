@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.imports.ynab.deserializer
+package de.richargh.buggetfx.imports.ynab.mapper
 
 import com.fasterxml.jackson.core.JsonParser
 import com.fasterxml.jackson.core.JsonProcessingException
@@ -17,24 +17,33 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeFormatterBuilder
 
-class YMatchedTransactionDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDeserializer<YMatchedTransaction>(vc) {
+class YTransactionDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDeserializer<YTransaction>(vc) {
 
     @Throws(IOException::class, JsonProcessingException::class)
-    override fun deserialize(jp: JsonParser, ctxt: DeserializationContext): YMatchedTransaction {
+    override fun deserialize(jp: JsonParser, ctxt: DeserializationContext): YTransaction {
         val node: JsonNode = jp.readValueAsTree()
-        val entityType = node["entityType"].asText().toYEntityType()
 
         val date = parseMoment(node["date"].asText())
         val entityId = node["entityId"].asText().toYEntityId()
         val categoryId = node["categoryId"].asText().toYCategoryId()
         val targetAccountId = node["targetAccountId"].asTextOrNull()?.toYAccountId()
-        val payeeId = node["payeeId"].asText().toYPayeeId()
+        val payeeId = node["payeeId"].asTextOrNull()?.toYPayeeId()
         val entityVersion = node["entityVersion"].asText().toYEntityVersion()
         val amount = node["amount"].asDouble()
         val accountId = node["accountId"].asText().toYAccountId()
         val memo = node["memo"].asTextOrNull()
 
-        return YMatchedTransaction(
+        val matchedTransactions = mutableListOf<YMatchedTransaction>()
+        node["matchedTransactions"]?.elements()?.forEach {
+            matchedTransactions.add(jp.codec.treeToValue(it, YMatchedTransaction::class.java))
+        }
+
+        val subTransactions = mutableListOf<YSubTransaction>()
+        node["subTransactions"]?.elements()?.forEach {
+            subTransactions.add(jp.codec.treeToValue(it, YSubTransaction::class.java))
+        }
+
+        return YTransaction(
                 date,
                 entityId,
                 categoryId,
@@ -43,8 +52,11 @@ class YMatchedTransactionDeserializer @JvmOverloads constructor(vc: Class<*>? = 
                 entityVersion,
                 amount,
                 accountId,
-                memo)
+                memo,
+                matchedTransactions,
+                subTransactions)
     }
+
 }
 
 private val DATE_TIME_FORMATTER = DateTimeFormatterBuilder()

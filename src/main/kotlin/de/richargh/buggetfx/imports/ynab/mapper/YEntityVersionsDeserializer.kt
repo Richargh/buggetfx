@@ -1,11 +1,10 @@
-package de.richargh.buggetfx.imports.ynab.deserializer
+package de.richargh.buggetfx.imports.ynab.mapper
 
 import com.fasterxml.jackson.core.JsonParser
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.DeserializationContext
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer
-import de.richargh.buggetfx.imports.ynab.asTextOrNull
 import de.richargh.buggetfx.imports.ynab.model.base.*
 import de.richargh.buggetfx.imports.ynab.model.item.*
 import java.io.IOException

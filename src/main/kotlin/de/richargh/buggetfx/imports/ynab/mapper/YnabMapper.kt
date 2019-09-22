@@ -1,13 +1,14 @@
-package de.richargh.buggetfx.imports.ynab
+package de.richargh.buggetfx.imports.ynab.mapper
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
 import com.fasterxml.jackson.databind.module.SimpleModule
-import de.richargh.buggetfx.imports.ynab.deserializer.*
+import de.richargh.buggetfx.imports.ynab.addDeserializer
 import de.richargh.buggetfx.imports.ynab.model.root.YDevice
 import de.richargh.buggetfx.imports.ynab.model.root.YFull
 import de.richargh.buggetfx.imports.ynab.model.root.YDiff
+import de.richargh.buggetfx.imports.ynab.readValue
 
 class YnabMapper {
 

@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.imports.ynab
+package de.richargh.buggetfx.imports.ynab.mapper
 
 import de.richargh.buggetfx.imports.ynab_builder.*
 import org.assertj.core.api.Assertions.assertThat

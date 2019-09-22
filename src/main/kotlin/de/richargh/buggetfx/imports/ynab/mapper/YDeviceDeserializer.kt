@@ -1,13 +1,11 @@
-package de.richargh.buggetfx.imports.ynab.deserializer
+package de.richargh.buggetfx.imports.ynab.mapper
 
 import com.fasterxml.jackson.core.JsonParser
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.DeserializationContext
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer
-import de.richargh.buggetfx.imports.ynab.model.base.YEntityVersion
 import de.richargh.buggetfx.imports.ynab.model.item.YEntityVersions
-import de.richargh.buggetfx.imports.ynab.model.item.YSubTransaction
 import de.richargh.buggetfx.imports.ynab.model.root.YDevice
 import de.richargh.buggetfx.imports.ynab.model.root.toYDeviceGuid
 import de.richargh.buggetfx.imports.ynab.model.root.toYShortDeviceId
