@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.imports.ynab.model.entity
+package de.richargh.buggetfx.imports.ynab.model.item
 
 import de.richargh.buggetfx.imports.ynab.model.base.YEntityVersion
 

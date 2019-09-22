@@ -2,9 +2,8 @@ package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.entity.YBudgetMetaData
-import de.richargh.buggetfx.imports.ynab.model.entity.YCategory
-import de.richargh.buggetfx.imports.ynab.model.entity.YCategoryType
+import de.richargh.buggetfx.imports.ynab.model.item.YCategory
+import de.richargh.buggetfx.imports.ynab.model.item.YCategoryType
 
 class YCategoryBuilder {
 

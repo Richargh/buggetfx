@@ -1,9 +1,9 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
-import de.richargh.buggetfx.imports.ynab.model.entity.toYAutofillCategoryId
+import de.richargh.buggetfx.imports.ynab.model.item.toYAutofillCategoryId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.entity.YPayee
+import de.richargh.buggetfx.imports.ynab.model.item.YPayee
 
 class YPayeeBuilder {
 

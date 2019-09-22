@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer
 import de.richargh.buggetfx.imports.ynab.asTextOrNull
 import de.richargh.buggetfx.imports.ynab.model.base.*
-import de.richargh.buggetfx.imports.ynab.model.entity.*
+import de.richargh.buggetfx.imports.ynab.model.item.*
 import de.richargh.buggetfx.time.Moment
 import java.io.IOException
 import java.time.LocalDate

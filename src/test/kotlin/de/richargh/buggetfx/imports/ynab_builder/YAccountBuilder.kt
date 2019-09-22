@@ -2,8 +2,8 @@ package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.entity.YAccount
-import de.richargh.buggetfx.imports.ynab.model.entity.YAccountType
+import de.richargh.buggetfx.imports.ynab.model.item.YAccount
+import de.richargh.buggetfx.imports.ynab.model.item.YAccountType
 
 class YAccountBuilder {
 

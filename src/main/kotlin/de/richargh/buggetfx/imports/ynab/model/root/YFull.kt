@@ -1,9 +1,9 @@
 package de.richargh.buggetfx.imports.ynab.model.root
 
-import de.richargh.buggetfx.imports.ynab.model.entity.YAccount
-import de.richargh.buggetfx.imports.ynab.model.entity.YBudgetMetaData
-import de.richargh.buggetfx.imports.ynab.model.entity.YFileMetaData
-import de.richargh.buggetfx.imports.ynab.model.entity.YTransaction
+import de.richargh.buggetfx.imports.ynab.model.item.YAccount
+import de.richargh.buggetfx.imports.ynab.model.item.YBudgetMetaData
+import de.richargh.buggetfx.imports.ynab.model.item.YFileMetaData
+import de.richargh.buggetfx.imports.ynab.model.item.YTransaction
 
 data class YFull(
         val fileMetaData: YFileMetaData,

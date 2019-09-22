@@ -1,7 +1,7 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.*
-import de.richargh.buggetfx.imports.ynab.model.entity.YSubTransaction
+import de.richargh.buggetfx.imports.ynab.model.item.YSubTransaction
 
 class YSubTransactionBuilder {
 

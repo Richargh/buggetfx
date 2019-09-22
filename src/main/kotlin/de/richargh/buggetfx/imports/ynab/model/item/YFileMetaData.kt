@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.imports.ynab.model.entity
+package de.richargh.buggetfx.imports.ynab.model.item
 
 data class YFileMetaData(
         val budgetDataVersion: YBudgetDataVersion,

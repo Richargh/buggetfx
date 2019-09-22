@@ -1,9 +1,9 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.entity.YFileMetaData
-import de.richargh.buggetfx.imports.ynab.model.entity.toYBudgetDataVersion
-import de.richargh.buggetfx.imports.ynab.model.entity.toYEntityVersions
+import de.richargh.buggetfx.imports.ynab.model.item.YFileMetaData
+import de.richargh.buggetfx.imports.ynab.model.item.toYBudgetDataVersion
+import de.richargh.buggetfx.imports.ynab.model.item.toYEntityVersions
 
 class YFileMetaDataBuilder {
 

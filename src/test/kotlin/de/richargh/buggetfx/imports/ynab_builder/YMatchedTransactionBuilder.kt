@@ -1,7 +1,7 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.*
-import de.richargh.buggetfx.imports.ynab.model.entity.YMatchedTransaction
+import de.richargh.buggetfx.imports.ynab.model.item.YMatchedTransaction
 import de.richargh.buggetfx.time.Cronus
 
 class YMatchedTransactionBuilder {

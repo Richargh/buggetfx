@@ -1,8 +1,7 @@
 package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
-import de.richargh.buggetfx.imports.ynab.model.entity.YAccount
-import de.richargh.buggetfx.imports.ynab.model.entity.YBudgetMetaData
+import de.richargh.buggetfx.imports.ynab.model.item.YBudgetMetaData
 
 class YBudgetMetaDataBuilder {
 

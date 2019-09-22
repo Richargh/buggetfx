@@ -1,6 +1,6 @@
 package de.richargh.buggetfx.imports.ynab.model.root
 
-import de.richargh.buggetfx.imports.ynab.model.entity.YItem
+import de.richargh.buggetfx.imports.ynab.model.item.YItem
 import de.richargh.buggetfx.time.Moment
 
 data class YDiff(
