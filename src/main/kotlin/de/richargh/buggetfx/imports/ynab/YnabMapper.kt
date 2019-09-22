@@ -9,7 +9,7 @@ import de.richargh.buggetfx.imports.ynab.model.root.YDevice
 import de.richargh.buggetfx.imports.ynab.model.root.YFull
 import de.richargh.buggetfx.imports.ynab.model.root.YDiff
 
-class YnabParser {
+class YnabMapper {
 
     private val mapper = jacksonObjectMapper().apply {
         configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
@@ -34,7 +34,7 @@ class YnabParser {
         registerModule(module)
     }
 
-    fun parseDiff(file: File): YDiff = mapper.readValue(file)
-    fun parseFull(file: File): YFull = mapper.readValue(file)
-    fun parseDevice(file: File): YDevice = mapper.readValue(file)
+    fun toDiff(file: File): YDiff = mapper.readValue(file)
+    fun toFull(file: File): YFull = mapper.readValue(file)
+    fun toDevice(file: File): YDevice = mapper.readValue(file)
 }
