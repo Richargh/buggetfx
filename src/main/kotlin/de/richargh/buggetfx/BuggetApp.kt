@@ -1,12 +1,11 @@
 package de.richargh.buggetfx
 
 import tornadofx.*
-import java.time.LocalDate
 
 fun main(args: Array<String>) {
-    launch<MyApp>(args)
+    launch<BuggetApp>(args)
 }
 
-class MyApp: App(MyView::class)
+class BuggetApp: App(MyView::class)
 
 
