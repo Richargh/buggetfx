@@ -2,7 +2,6 @@ package de.richargh.buggetfx.imports.ynab
 
 import de.richargh.buggetfx.imports.ynab_builder.*
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -188,10 +187,10 @@ class YnabParserTest {
             val actualFull = ynabParser.parseFull(file)
 
             // assert
-            val expectedTransaction = YTransactionBuilder().build()
-            val expectedFull = YFullBuilder()
-                    .withTransaction(expectedTransaction)
-                    .build()
+            val expectedFull = yFull {
+                plusAccount(YAccountBuilder().build())
+                plusTransaction(YTransactionBuilder().build())
+            }
             assertThat(actualFull).isEqualTo(expectedFull)
         }
     }

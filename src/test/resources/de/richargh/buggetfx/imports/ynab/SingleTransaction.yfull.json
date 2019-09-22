@@ -16,17 +16,14 @@
     },
 	"accounts": [
         {
-            "entityVersion": "A-1",
-            "accountName": "Power Bank",
-            "lastReconciledDate": null,
-            "lastReconciledBalance": 0,
-            "hidden": false,
-            "lastEnteredCheckNumber": -1,
-            "entityId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
-            "sortableIndex": 0,
+            "entityVersion": "A-5",
+
             "entityType": "account",
-            "onBudget": true,
-            "accountType": "Cash"
+            "entityId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
+            "accountType": "Cash",
+
+            "accountName": "Best Bank",
+            "lastReconciledBalance": 1632.99
         }
 	],
 	"accountMappings": [],
