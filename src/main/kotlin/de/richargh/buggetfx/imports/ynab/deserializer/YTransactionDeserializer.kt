@@ -34,15 +34,14 @@ class YTransactionDeserializer @JvmOverloads constructor(vc: Class<*>? = null): 
         val memo = node["memo"].asTextOrNull()
 
         val matchedTransactions = mutableListOf<YMatchedTransaction>()
-        node["matchedTransactions"].elements().forEach {
+        node["matchedTransactions"]?.elements()?.forEach {
             matchedTransactions.add(jp.codec.treeToValue(it, YMatchedTransaction::class.java))
         }
 
         val subTransactions = mutableListOf<YSubTransaction>()
-        node["subTransactions"].elements().forEach {
+        node["subTransactions"]?.elements()?.forEach {
             subTransactions.add(jp.codec.treeToValue(it, YSubTransaction::class.java))
         }
-
 
         return YTransaction(
                 date,

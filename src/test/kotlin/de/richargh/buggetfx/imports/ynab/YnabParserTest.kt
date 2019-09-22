@@ -178,9 +178,8 @@ class YnabParserTest {
             assertThat(actualFull).isEqualTo(expectedFull)
         }
 
-        @Disabled
         @Test
-        fun `single transaction budget should match expected budget`() {
+        fun `single transaction budget should match default budget`() {
             // arrange
             val file = File(this::class.java.getResource("SingleTransaction.yfull.json").file)
             val ynabParser = YnabParser()

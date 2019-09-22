@@ -1,6 +1,6 @@
 {
 	"fileMetaData": {
-        "currentKnowledge": "A-5,B-0",
+        "currentKnowledge": "A-5,B-2",
         "budgetDataVersion": "4.2",
         "entityType": "fileMetaData"
     },
@@ -70,18 +70,16 @@
 	],
 	"transactions": [
 	    {
-            "entityVersion": "A-1",
-
+            "entityVersion": "A-5",
             "entityType": "transaction",
-            "entityId": "09C115B4-E0DD-F355-3121-2C3FB69F6572",
-            "accountId": "9B4EC170-16ED-C13C-B5DB-2C3FB66E900A",
-            "payeeId": "9EEECCD1-3630-B33A-88BC-40FA6C3408B1",
-            "categoryId": "A15",
-            "date": "2013-04-26",
-            "accepted": true,
-            "memo": "Golden Cherries",
-            "amount": 10,
-            "cleared": "Cleared"
+            "entityId": "97F314EA-91FB-19AB-8396-CE0004ADDC20",
+
+            "accountId": "C8847157-E05B-49FA-86AA-5D60556A5E9D",
+            "payeeId": "C45B535E-4AAD-C2FD-7A91-46F1AE68A6ED",
+            "categoryId": "3A471795-F8F2-7727-F36C-D0D1A4E8C4F9",
+            "date": "2018-07-06",
+            "memo": "for the Horde",
+            "amount": -104.19
         }
 	],
 	"scheduledTransactions": [],
