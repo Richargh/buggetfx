@@ -22,7 +22,6 @@ class YPayeeDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDes
     private fun payee(node: JsonNode): YPayee {
         val autoFillMemo = node["autoFillMemo"].asTextOrNull()
         val name = node["name"].asText()
-        val enabled = node["enabled"].asBoolean()
         val entityVersion = node["entityVersion"].asText().toYEntityVersion()
         val entityId = node["entityId"].asText().toYEntityId()
         val autoFillCategoryId = node["autoFillCategoryId"].asText().toYAutofillCategoryId()
@@ -31,7 +30,6 @@ class YPayeeDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDes
         return YPayee(
                 autoFillMemo,
                 name,
-                enabled,
                 entityVersion,
                 entityId,
                 autoFillCategoryId,
