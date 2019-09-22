@@ -16,5 +16,10 @@ class YMatchedTransactionBuilder {
             -104.19,
             "C8847157-E05B-49FA-86AA-5D60556A5E9D".toYAccountId(),
             "maybe for the Horde")
+}
 
+fun yMatchedTransaction(init: YMatchedTransactionBuilder.() -> Unit): YMatchedTransaction {
+    val builder = YMatchedTransactionBuilder()
+    builder.init()
+    return builder.build()
 }

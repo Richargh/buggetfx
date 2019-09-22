@@ -2,6 +2,7 @@ package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
+import de.richargh.buggetfx.imports.ynab.model.budget.YFull
 import de.richargh.buggetfx.imports.ynab.model.entity.YAccount
 import de.richargh.buggetfx.imports.ynab.model.entity.YAccountType
 
@@ -21,4 +22,10 @@ class YAccountBuilder {
             accountType,
             accountName,
             lastReconciledBalance)
+}
+
+fun yAccount(init: YAccountBuilder.() -> Unit): YAccount {
+    val builder = YAccountBuilder()
+    builder.init()
+    return builder.build()
 }

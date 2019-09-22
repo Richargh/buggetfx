@@ -3,6 +3,7 @@ package de.richargh.buggetfx.imports.ynab_builder
 import de.richargh.buggetfx.imports.ynab.model.entity.toYAutofillCategoryId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityId
 import de.richargh.buggetfx.imports.ynab.model.base.toYEntityVersion
+import de.richargh.buggetfx.imports.ynab.model.diff.YDiff
 import de.richargh.buggetfx.imports.ynab.model.entity.YPayee
 
 class YPayeeBuilder {
@@ -19,4 +20,10 @@ class YPayeeBuilder {
                 "3A471795-F8F2-7727-F36C-D0D1A4E8C4F9".toYAutofillCategoryId(),
                 -5.19)
     }
+}
+
+fun yPayee(init: YPayeeBuilder.() -> Unit): YPayee {
+    val builder = YPayeeBuilder()
+    builder.init()
+    return builder.build()
 }

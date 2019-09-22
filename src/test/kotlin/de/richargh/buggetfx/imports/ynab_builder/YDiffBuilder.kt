@@ -2,6 +2,8 @@ package de.richargh.buggetfx.imports.ynab_builder
 
 import de.richargh.buggetfx.imports.ynab.model.entity.YItem
 import de.richargh.buggetfx.imports.ynab.model.diff.YDiff
+import de.richargh.buggetfx.imports.ynab.model.entity.YAccount
+import de.richargh.buggetfx.imports.ynab.model.entity.YTransaction
 import de.richargh.buggetfx.time.Cronus
 
 class YDiffBuilder {
@@ -27,4 +29,11 @@ class YDiffBuilder {
     }
 
     fun plusItem(item: YItem) = apply { items += item }
+    operator fun YItem.unaryPlus() { items.add(this) }
+}
+
+fun yDiff(init: YDiffBuilder.() -> Unit): YDiff {
+    val builder = YDiffBuilder()
+    builder.init()
+    return builder.build()
 }

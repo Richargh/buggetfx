@@ -18,13 +18,8 @@ class YFullBuilder {
             accounts,
             transactions)
 
-    fun plusTransaction(transaction: YTransaction) = apply {
-        this.transactions.add(transaction)
-    }
-
-    fun plusAccount(account: YAccount) = apply {
-        this.accounts.add(account)
-    }
+    operator fun YAccount.unaryPlus() { accounts.add(this) }
+    operator fun YTransaction.unaryPlus() { transactions.add(this) }
 }
 
 fun yFull(init: YFullBuilder.() -> Unit): YFull {

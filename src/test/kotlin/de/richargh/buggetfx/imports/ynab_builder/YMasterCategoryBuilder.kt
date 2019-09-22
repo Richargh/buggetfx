@@ -30,3 +30,9 @@ class YMasterCategoryBuilder {
         subCategories.add(category)
     }
 }
+
+fun yMasterCategory(init: YMasterCategoryBuilder.() -> Unit): YMasterCategory {
+    val builder = YMasterCategoryBuilder()
+    builder.init()
+    return builder.build()
+}
