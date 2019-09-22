@@ -183,11 +183,30 @@ class YnabParserTest {
             // assert
             val expectedFull = yFull {
                 +yAccount { }
-                +yMasterCategory { +subCategory {  } }
-                +yPayee {  }
+                +yMasterCategory { +subCategory { } }
+                +yPayee { }
                 +yTransaction { }
             }
             assertThat(actualFull).isEqualTo(expectedFull)
+        }
+    }
+
+    @Nested
+    @DisplayName("YDevice")
+    inner class Device {
+
+        @Test
+        fun `pc should match pc`() {
+            // arrange
+            val file = File(this::class.java.getResource("PC.ydevice.json").file)
+            val ynabParser = YnabParser()
+
+            // act
+            val actualDevice = ynabParser.parseDevice(file)
+
+            // assert
+            val expectedFull = yDevice { presetPc() }
+            assertThat(actualDevice).isEqualTo(expectedFull)
         }
     }
 }

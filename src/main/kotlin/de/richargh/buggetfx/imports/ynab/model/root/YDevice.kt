@@ -1,3 +1,3 @@
 package de.richargh.buggetfx.imports.ynab.model.root
 
-class YDevice
+data class YDevice(val shortDeviceId: YShortDeviceId)

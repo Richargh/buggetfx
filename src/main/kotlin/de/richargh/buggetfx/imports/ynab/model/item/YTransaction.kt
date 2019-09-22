@@ -8,7 +8,7 @@ data class YTransaction(
         val entityId: YEntityId,
         val categoryId: YCategoryId,
         val targetAccountId: YAccountId?,
-        val payeeId: YPayeeId,
+        val payeeId: YPayeeId?,
         val entityVersion: YEntityVersion,
         val amount: Double,
         val accountId: YAccountId,

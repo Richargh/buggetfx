@@ -1,0 +1,17 @@
+{
+  "formatVersion" : "1.2",
+  "YNABVersion" : "iOS 3.4.3 (263)",
+
+  "highestDataVersionImported" : "4.2",
+  "lastDataVersionFullyKnown" : "4.2",
+
+  "shortDeviceId" : "B",
+  "deviceGUID" : "071EF167-2726-C91B-8315-DBFFD2DF2D31",
+  "friendlyName" : "Overpriced iPhone",
+  "deviceType" : "iPhone",
+  "deviceVersion" : "11.4.1",
+
+  "knowledge" : "A-5,B-2",
+  "knowledgeInFullBudgetFile" : null,
+  "hasFullKnowledge" : false
+}

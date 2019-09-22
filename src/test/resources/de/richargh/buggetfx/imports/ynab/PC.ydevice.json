@@ -1,0 +1,16 @@
+{
+  "formatVersion": "1.2",
+  "YNABVersion": "Desktop version: YNAB 4 v4.3.843 (com.ynab.YNAB4.LiveSteam), AIR Version: 4.0.0.1390",
+
+  "highestDataVersionImported": "4.2",
+  "lastDataVersionFullyKnown": "4.2",
+
+  "shortDeviceId": "A",
+  "deviceGUID": "7ED5BBEA-8B0F-0C0C-A811-233A7893803B",
+  "friendlyName": "PC",
+  "deviceType": "Desktop (AIR), OS:Windows 8",
+
+  "knowledge": "A-5,B-2",
+  "knowledgeInFullBudgetFile": "A-4,B-2",
+  "hasFullKnowledge": true
+}
