@@ -4,12 +4,14 @@
 		"budgetDataVersion": "4.2",
 		"currentKnowledge": "A-5,B-2"
 	},
+	"budgetMetaData": {
+		"entityVersion": "A-0"
+	},
 	"accounts": [],
 	"accountMappings": [],
 	"masterCategories": [],
 	"payees": [],
 	"transactions": [],
 	"scheduledTransactions": [],
-	"budgetMetaData": {},
 	"monthlyBudgets": []
 }

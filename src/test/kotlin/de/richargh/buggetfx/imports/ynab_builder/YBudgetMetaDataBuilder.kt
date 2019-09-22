@@ -6,6 +6,6 @@ import de.richargh.buggetfx.imports.ynab.model.entity.YBudgetMetaData
 class YBudgetMetaDataBuilder {
 
     fun build() = YBudgetMetaData(
-            "A-5".toYEntityVersion())
+            "A-0".toYEntityVersion())
 
 }
