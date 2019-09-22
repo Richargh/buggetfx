@@ -26,6 +26,7 @@ class YDeviceDeserializer @JvmOverloads constructor(vc: Class<*>? = null): StdDe
 
         val knowledge = jp.codec.treeToValue(node["knowledge"], YEntityVersions::class.java)
         val knowledgeInFullBudgetFile = jp.codec.treeToValue(node["knowledgeInFullBudgetFile"], YEntityVersions::class.java)
+                                        ?: YEntityVersions(emptyList())
         val hasFullKnowledge = node["hasFullKnowledge"].asBoolean()
 
         return YDevice(

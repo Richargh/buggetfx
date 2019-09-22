@@ -196,7 +196,7 @@ class YnabParserTest {
     inner class Device {
 
         @Test
-        fun `pc should match pc`() {
+        fun `pc should match default pc`() {
             // arrange
             val file = File(this::class.java.getResource("PC.ydevice.json").file)
             val ynabParser = YnabParser()
@@ -206,6 +206,20 @@ class YnabParserTest {
 
             // assert
             val expectedFull = yDevice { presetPc() }
+            assertThat(actualDevice).isEqualTo(expectedFull)
+        }
+
+        @Test
+        fun `phone should match default phone`() {
+            // arrange
+            val file = File(this::class.java.getResource("iPhone.ydevice.json").file)
+            val ynabParser = YnabParser()
+
+            // act
+            val actualDevice = ynabParser.parseDevice(file)
+
+            // assert
+            val expectedFull = yDevice { presetPhone() }
             assertThat(actualDevice).isEqualTo(expectedFull)
         }
     }

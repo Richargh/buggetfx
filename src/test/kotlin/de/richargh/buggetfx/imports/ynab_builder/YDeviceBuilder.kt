@@ -31,12 +31,15 @@ class YDeviceBuilder {
     fun shortDeviceId(shortDeviceId: String) {
         this.shortDeviceId = shortDeviceId.toYShortDeviceId()
     }
+
     fun deviceGuid(deviceGuid: String) {
         this.deviceGuid = deviceGuid.toYDeviceGuid()
     }
+
     fun friendlyName(friendlyName: String) {
         this.friendlyName = friendlyName
     }
+
     fun deviceType(deviceType: String) {
         this.deviceType = deviceType
     }
@@ -44,11 +47,22 @@ class YDeviceBuilder {
     fun knowledge(vararg entityVersions: String) {
         this.knowledge = entityVersions.map { it.toYEntityVersion() }
     }
+
     fun knowledgeInFullBudgetFile(vararg entityVersions: String) {
         this.knowledgeInFullBudgetFile = entityVersions.map { it.toYEntityVersion() }
     }
-    fun hasFullKnowledge() { this.hasFullKnowledge = true }
-    fun noFullKnowledge() { this.hasFullKnowledge = false }
+
+    fun noKnowledgeInFullBudgetFile() {
+        this.knowledgeInFullBudgetFile = emptyList()
+    }
+
+    fun hasFullKnowledge() {
+        this.hasFullKnowledge = true
+    }
+
+    fun noFullKnowledge() {
+        this.hasFullKnowledge = false
+    }
 }
 
 fun yDevice(init: YDeviceBuilder.() -> Unit): YDevice {
@@ -66,4 +80,15 @@ fun YDeviceBuilder.presetPc() {
     knowledge("A-5", "B-2")
     knowledgeInFullBudgetFile("A-4", "B-2")
     hasFullKnowledge()
+}
+
+fun YDeviceBuilder.presetPhone() {
+    shortDeviceId("B")
+    deviceGuid("071EF167-2726-C91B-8315-DBFFD2DF2D31")
+    friendlyName("Overpriced iPhone")
+    deviceType("iPhone")
+
+    knowledge("A-5", "B-2")
+    noKnowledgeInFullBudgetFile()
+    noFullKnowledge()
 }
