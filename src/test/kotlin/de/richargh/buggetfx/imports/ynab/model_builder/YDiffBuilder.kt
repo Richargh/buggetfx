@@ -1,4 +1,4 @@
-package de.richargh.buggetfx.imports.ynab_builder
+package de.richargh.buggetfx.imports.ynab.model_builder
 
 import de.richargh.buggetfx.imports.ynab.model.item.YItem
 import de.richargh.buggetfx.imports.ynab.model.root.YDiff

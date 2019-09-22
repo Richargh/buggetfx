@@ -1,6 +1,6 @@
 package de.richargh.buggetfx.imports.ynab.mapper
 
-import de.richargh.buggetfx.imports.ynab_builder.*
+import de.richargh.buggetfx.imports.ynab.model_builder.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
@@ -51,7 +51,8 @@ class YnabMapperTest {
             val actualDiff = ynabMapper.toDiff(file)
 
             // assert
-            val expectedDiff = yDiff { +yCategory { } }
+            val expectedDiff =
+                    yDiff { +yCategory { } }
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
@@ -84,7 +85,8 @@ class YnabMapperTest {
 
             // assert
             val expected = yMatchedTransaction { }
-            val expectedTransaction = YTransactionBuilder().plusMatchedTransaction(expected).build()
+            val expectedTransaction = YTransactionBuilder()
+                    .plusMatchedTransaction(expected).build()
             val expectedDiff = yDiff { +expectedTransaction }
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
@@ -134,7 +136,8 @@ class YnabMapperTest {
                     .withEntityId(parentTransactionId)
                     .plusSubTransactions(expectedA4, expectedA5)
                     .build()
-            val expectedDiff = YDiffBuilder().plusItem(expectedTransaction).build()
+            val expectedDiff = YDiffBuilder()
+                    .plusItem(expectedTransaction).build()
             assertThat(actualDiff).isEqualTo(expectedDiff)
         }
 
