@@ -2,6 +2,9 @@ package de.richargh.buggetfx.imports.ynab.scanner
 
 import de.richargh.buggetfx.imports.ynab.model.root.YDevice
 import de.richargh.buggetfx.imports.ynab.model.root.YDiff
+import de.richargh.buggetfx.imports.ynab.model.root.YFull
 
-class YDataDevice(val device: YDevice,
-                  val diff: List<YDiff>)
+class YDataForDevice(
+        val device: YDevice,
+        val full: YFull?,
+        val diff: List<YDiff>)

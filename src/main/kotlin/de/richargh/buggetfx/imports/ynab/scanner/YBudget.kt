@@ -1,6 +1,5 @@
 package de.richargh.buggetfx.imports.ynab.scanner
 
-import de.richargh.buggetfx.imports.ynab.model.root.YDevice
 import de.richargh.buggetfx.imports.ynab.model.root.YDeviceGuid
 
 class YBudget(
@@ -8,4 +7,4 @@ class YBudget(
         val name: String,
         val path: String,
 
-        val devices: Map<YDeviceGuid, YDataDevice>)
+        val devices: Map<YDeviceGuid, YDataForDevice>)

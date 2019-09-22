@@ -1,10 +1,7 @@
 package de.richargh.buggetfx.imports.ynab.scanner
 
 import de.richargh.buggetfx.imports.ynab.mapper.YnabMapper
-import de.richargh.buggetfx.imports.ynab.model.root.YDevice
-import de.richargh.buggetfx.imports.ynab.model.root.YDeviceGuid
-import de.richargh.buggetfx.imports.ynab.model.root.YDiff
-import de.richargh.buggetfx.imports.ynab.model.root.toYDeviceGuid
+import de.richargh.buggetfx.imports.ynab.model.root.*
 import java.io.File
 
 class YScanner(val mapper: YnabMapper) {
@@ -34,7 +31,7 @@ private class YScanContext(val mapper: YnabMapper) {
                 dataDevices)
     }
 
-    private fun walkDeviceData(budgetFolder: File): Map<YDeviceGuid, YDataDevice> {
+    private fun walkDeviceData(budgetFolder: File): Map<YDeviceGuid, YDataForDevice> {
         val deviceFolders = budgetFolder.walk().filter {
             it.isYnabDeviceFolder()
         }.toList()
@@ -44,8 +41,23 @@ private class YScanContext(val mapper: YnabMapper) {
             it.isDirectory && devices.containsKey(it.name.toYDeviceGuid())
         }.map {
             val device = devices.getValue(it.name.toYDeviceGuid())
-            YDataDevice(device, walkDiff(it))
-        }.associate { it.device.deviceGUID to it }
+            YDataForDevice(device, walkFull(it), walkDiff(it))
+        }.associateBy { it.device.deviceGUID }
+    }
+
+    private fun walkFull(deviceFolder: File): YFull? {
+        val fullFiles = deviceFolder.walk().filter {
+            it.isYnabFullFile()
+        }.toList()
+        return if (fullFiles.isEmpty()) {
+            scanEvents.add(noFull(deviceFolder))
+            null
+        } else {
+            val fullFile = fullFiles.first()
+            if (fullFiles.size > 1)
+                scanEvents.add(tooManyFullWarn(deviceFolder, fullFiles.size, fullFile))
+            mapper.toFull(fullFile)
+        }
     }
 
     private fun walkDiff(deviceFolder: File): List<YDiff> {
@@ -72,9 +84,9 @@ private class YScanContext(val mapper: YnabMapper) {
     private fun walkDeviceDeclarations(deviceDeclarationFolder: File): Map<YDeviceGuid, YDevice> {
         val devices = deviceDeclarationFolder.walk().filter {
             it.isYnabDeviceFile()
-        }.associate {
-            mapper.toDevice(it).let { device -> device.deviceGUID to device }
-        }
+        }.map {
+            mapper.toDevice(it)
+        }.associateBy { it.deviceGUID }
 
         return devices
     }
@@ -84,12 +96,20 @@ private class YScanContext(val mapper: YnabMapper) {
     private fun File.isYnabDeviceFolder() = this.isDirectory && this.name == "devices"
     private fun File.isYnabDeviceFile() = this.isFile && this.name.endsWith(".ydevice")
 
+    private fun File.isYnabFullFile() = this.isFile && this.name.endsWith(".yfull")
     private fun File.isYnabDiffFile() = this.isFile && this.name.endsWith(".ydiff")
 }
 
+private fun noFull(deviceDataFolder: File) =
+        error(YScanTarget.FULL, "Could not find a single .yfull inside [${deviceDataFolder.absolutePath}]")
+
+private fun tooManyFullWarn(deviceDataFolder: File, fullFileSize: Int, fullFile: File) =
+        warn(YScanTarget.FULL,
+             "Found [${fullFileSize}] .yfull files inside [${deviceDataFolder.absolutePath}] and will only pick the first one [${fullFile.name}].")
+
 private fun noDeviceError(budgetFolder: File) =
-        error(YScanTarget.DEVICE, "We could not find a single devicefolder inside [${budgetFolder.absolutePath}]")
+        error(YScanTarget.DEVICE, "Could not find a single devicefolder inside [${budgetFolder.absolutePath}]")
 
 private fun tooManyDevicesWarn(budgetFolder: File, deviceFolderSize: Int, deviceFolder: File) = warn(
         YScanTarget.DEVICE,
-        "We found [${deviceFolderSize}] devicefolders inside [${budgetFolder.absolutePath}] and will only pick the first one [${deviceFolder.name}].")
+        "Found [${deviceFolderSize}] devicefolders inside [${budgetFolder.absolutePath}] and will only pick the first one [${deviceFolder.name}].")
